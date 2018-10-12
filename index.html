@@ -88,10 +88,15 @@
             font-size:18px;
             
         }
-        .content .content-about-wen p{
+        .content .content-about-wen{
             text-align: center;
-            height: 43px;
+        }
+        .content .content-about-wen p{
+            text-align: left;
+            text-indent: 2em;
+            
             padding: 2px 0;
+            width: 50%;display: inline-block
         }
         .content .content-about-wen b{
             font-size: 22px;
@@ -134,10 +139,18 @@
             display: flex;
             justify-content:center;
             padding-top:45px;
+            box-sizing: border-box;
         }
         .content-server-main li{
             /*float: left;*/
-            margin: 0 35px;
+            /*padding: 0 35px;*/
+            width: 20%;
+            text-align: center;
+        }
+        .content-server-main li img{
+            
+            width: 134px;
+            height: 134px;
         }
         .content-server-main li p{
             text-align: center;
@@ -150,6 +163,7 @@
         }
         .content-footer{
             width: 100%;
+            /*background: url('img/bottom.png');*/
         }
         .content-footer img{
             width: 100%;
@@ -191,12 +205,14 @@
                     <span>About us</span>
                 </div>
                 <div class="content-about-wen">
-                    <p>
+                    <p >
                     <b>  好修修</b>
                     <span>依托汽车维修大数据,打造智能化、信息化、多元化的汽车后市场服务平台。</span>
+                    <!--</p>
+                    <p>-->
                     <i>聚合车主、</i>
-                    </p>
-                    <p>
+                    <!--</p>
+                    <p>-->
                     <i>赋能门店</i>
                     <span>,为车主的汽车生活提供高效、智能、便捷的</span>
                     <i>创新型</i>
@@ -296,6 +312,7 @@
                 </ul>
             </div>
             <div class="content-footer">
+                
                 <img src="img/bottom.png" alt="Summer beach concept">
             </div>
         </div>
