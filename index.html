@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <!--<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>-->
+    <title>Document</title>
+    <link rel="stylesheet" href="css/swipeslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <style>
+        body{
+            min-width: 800px;
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            
+            overflow: auto;
+        }
+        .nav{
+            width: 100%;
+            height: 120px;
+        }
+        .nav-left{
+            width: 340px;
+            height: 120px;
+            float: left;
+            line-height: 120px;
+            margin-left: 10%;
+        }
+        .nav-left a{
+            display: block;
+            width: 340px;
+            height: 120px;
+            display: flex;align-items: center
+        }
+        .nav-left img{
+            width: 80%;
+            align-items: center;
+        }
+
+        .nav-right{
+            width:250px;
+            height: 120px;
+            float: right;
+            margin-right: 10%;
+            line-height: 120px;
+        }
+        .nav-right a span{
+            font-size: 24px;
+            padding: 0 10px;
+        }
+        .nav-right a.active{
+            color: #ff8f3f;
+        }
+        .nav a:hover{
+            color: #ff8f3f;
+        }
+
+        .banner{
+            width: 100%;
+            
+        }
+        .banner img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .content{
+            width: 100%
+        }
+        .content-about{
+            padding: 20px 0;
+        }
+        .content-about-top{
+            text-align: center;
+            margin-top: 5px;
+        }
+        .content-about-top p{
+            text-align: center;
+            font-size:28px;
+            height: 46px;
+            line-height: 46px;
+        }
+        .content-about-top span{
+            color: #cfcfcf;
+        }
+        .content .content-about-wen p{
+            text-align: center;
+            height: 32px;
+        }
+        .content .content-about-wen b{
+            font-size: 20px;
+            color:#ff8f3e;
+            font-style:italic;
+        }
+        .content .content-about-wen i{
+            font-size: 20px;
+            color:#6975b2;
+            font-style:italic;
+        }
+
+        .content .content-about-bg{
+            max-width: 1168px;
+            
+            margin: 0 auto;
+        }
+        .content .content-about-bg img{
+            width: 100%;
+            height: auto;
+        }
+        
+        .content .content-banner{
+            width: 100%;
+        }
+        .content .content-banner img{
+            width: 100%;
+            height: 100%;
+        }
+
+        .content-server{
+            padding: 20px 0;
+        }
+        .content-server-main{
+            display: flex;
+            justify-content:center;
+            padding: 20px 0;
+        }
+        .content-server-main li{
+            /*float: left;*/
+            margin: 0 35px;
+        }
+        .content-server-main li p{
+            text-align: center;
+            font-size: 16px;
+            height: 26px;
+            line-height: 26px;
+        }
+        .content-server-main li p.common{
+            height: 50px; font-size: 20px; line-height: 50px;margin-top: 30px;
+        }
+        .content-footer{
+            width: 100%;
+        }
+        .content-footer img{
+            width: 100%;
+            height: auto;
+        }
+        .footer{
+            width: 100%;
+            height: 54px;
+            text-align: center;
+            line-height: 54px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!--导航！！！ -->
+        <div class="nav clearfix">
+            <div class="nav-left">
+                <a href="#"><img src="img/haoxiuxiu-logo.png" alt="..."></a>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="active"><span>首页</span></a>
+                <a href="http://download.hoxiuxiu.com/app/download.html"><span>门店App下载</span></a>
+            </div>
+            
+        </div>
+        <div class="banner">
+            <figure id="full_feature" class="swipslider">
+                <ul class="sw-slides " id="top-sw1">
+                    
+                </ul>
+            </figure>
+        </div>
+        <!--内容部分-->
+        <div class="content">
+            <div class="content-about">
+                <div class="content-about-top">
+                    <p>关于我们</p>
+                    <span>About us</span>
+                </div>
+                <div class="content-about-wen">
+                    <p>
+                    <b>  好修修</b>
+                    <span>依托汽车维修大数据,打造智能化、信息化、多元化的汽车后市场服务平台。</span>
+                    <i>聚合车主、</i>
+                    </p>
+                    <p>
+                    <i>赋能门店</i>
+                    <span>,为车主的汽车生活提供高效、智能、便捷的</span>
+                    <i>创新型</i>
+                    <span>服务</span>
+                    </p>
+                </div>
+                <div class="content-about-bg">
+                    <img src="img/xingxing.png" alt="..">
+                </div>
+                
+            </div>
+            <div class="content-banner" id="full_advertis">
+                
+
+            </div>
+            <div class="content-server">
+                <div class="content-about-top">
+                    <p>车主服务</p>
+                    <span>Services</span>
+                </div>
+                <ul class="content-server-main clearfix">
+                    <li>
+                        <a href="#"><img src="img/park-service.png" alt=""></a>
+                        <p style="color: #6bd2f5; " class="common">停车服务</p>
+                        <p>车位查找</p>
+                        <p>错峰停车</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/check-maintain.png" alt=""></a>
+                        <p style="color: #eecd46; " class="common">查选维修</p>
+                        <p>查选正规企业</p>
+                        <p>远离黑车汽修</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/maintain-record.png" alt=""></a>
+                        <p style="color: #27bd7e; " class="common">维修记录</p>
+                        <p>二手车增值</p>
+                        <p>维修溯源可查</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/maintain-review.png" alt=""></a>
+                        <p style="color: #fc8951; " class="common">维修点评</p>
+                        <p>点评服务</p>
+                        <p>群众监督</p>
+                    </li>
+                    <li>
+                        <a href="#"><img src="img/car-look.png" alt=""></a>
+                        <p style="color: #b3c984; " class="common">学车找我</p>
+                        <p>查选正规驾校</p>
+                        <p>满足个性学车需求</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-banner" id="full_data">
+                
+            </div>
+            <div class="content-server">
+                <div class="content-about-top">
+                    <p>门店赋能</p>
+                    <span>Solutions</span>
+                </div>
+                <ul class="content-server-main clearfix">
+                    <li>
+                        <a href="javascript:void(0);"><img src="img/pick-up-car.png" alt=""></a>
+                        <p style="color: #ff8180; " class="common">一键接车</p>
+                        <p>手机App扫车牌</p>
+                        <p>只能识别</p>
+                        <p>自动开单</p>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="img/car-insurance.png" alt=""></a>
+                        <p style="color: #f8951e; " class="common">车险服务</p>
+                        <p>手机App扫车牌</p>
+                        <p>智能报价、提醒</p>
+                        <p>定损维修回店</p>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="img/smart-maintain.png" alt=""></a>
+                        <p style="color: #a0d1c3; " class="common">智能维修</p>
+                        <p>全系车型整车结构图</p>
+                        <p>全系车型保养规则</p>
+                        <p>在线商城精准选购配件</p>
+                        <p>门店维修无边界</p>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="img/customer-relation.png" alt=""></a>
+                        <p style="color: #ffc312; " class="common">客户关系</p>
+                        <p>智能画像</p>
+                        <p>精准服务</p>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><img src="img/sells-saves.png" alt=""></a>
+                        <p style="color: #7ecf1a; " class="common">进销存</p>
+                        <p>动态库存管理</p>
+                        <p>智能下单补货</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-footer">
+                <a href="javascript:void(0);"><img src="img/bottom.png" alt="Summer beach concept"></a>
+            </div>
+        </div>
+        <!--底部页脚！！！-->
+        <div class="footer">
+            <span>Copyright © 2018 上海衡益网络技术有限公司.All Rights Reserved | 沪ICP备18016827号-1</span>
+        </div>
+    </div>
+    
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/swipeslider.min.js"></script>
+
+    <script type="text/javascript">
+        
+        
+        
+        window.onload=function(){
+            $.get("/proxy/Query?code=7009",function(data,status){
+                let getData=JSON.parse(data);
+                let imgTop='';
+                let imgMiddle='';
+                let imgBottom='';
+
+                for(let i in getData){
+                    if(getData[i]['type']==0){
+                        imgTop+='<li class="sw-slide"><img src="'+getData[i]['url']+'" alt=""></li>'
+                    }else if(getData[i]['type']==1){
+                        imgMiddle+='<img src="'+getData[i]['url']+'" alt="">';
+                    }else if(getData[i]['type']==2){
+                        imgBottom+='<img src="'+getData[i]['url']+'" alt="">';
+                    }
+                }
+                
+                console.log(imgTop,typeof(data),$('.top-sw1'));
+                
+                $('#top-sw1').append(imgTop);
+                $('#full_advertis').append(imgMiddle);
+                $('#full_data').append(imgBottom);
+
+                $('#full_feature').swipeslider({
+                    transitionDuration: 600,
+                    autoPlayTimeout: 8000,
+                    sliderHeight: '30%',
+                    autoPlay: true,
+
+                });
+            });
+        };
+        
+    </script>
+</body>
+</html>
