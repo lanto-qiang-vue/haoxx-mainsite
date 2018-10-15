@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <!--<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>-->
-    <title>Document</title>
+    <title>好修修主网站</title>
     <link rel="stylesheet" href="css/swipeslider.css">
     <link rel="stylesheet" href="css/reset.css">
     <style>
@@ -45,6 +45,18 @@
             float: right;
             margin-right: 19%;
             line-height: 80px;
+            position: relative;
+        }
+        .nav-right a{
+            position: absolute;
+            z-index: 10;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .nav-right a img{
+            width: 120px;
+            margin-top:-20px;
+            display: none;
         }
         .nav-right span{
             font-size: 18px;
@@ -56,6 +68,9 @@
         }
         .nav a:hover{
             color: #FF7B00;
+        }
+        .nav a:hover img{
+            display: inline-block;
         }
 
         .banner{
@@ -140,12 +155,16 @@
             justify-content:center;
             padding-top:45px;
             box-sizing: border-box;
+            max-width: 1200px;
+            margin: 0 auto;
+
         }
         .content-server-main li{
             /*float: left;*/
-            /*padding: 0 35px;*/
+            padding: 0 30px;
             width: 20%;
             text-align: center;
+            box-sizing: border-box;
         }
         .content-server-main li img{
             
@@ -186,7 +205,11 @@
             </div>
             <div class="nav-right">
                 <span class="active">首页</span>
-                <a href="http://download.hoxiuxiu.com/app/download.html"><span>门店App下载</span></a>
+                    <a>
+                        <span>门店App下载</span>
+                        <img src="img/erwei.png" alt="..">
+                    </a>
+
             </div>
             
         </div>
@@ -206,7 +229,7 @@
                 </div>
                 <div class="content-about-wen">
                     <p >
-                    <b>  好修修</b>
+                    <b>好修修</b>
                     <span>依托汽车维修大数据,打造智能化、信息化、多元化的汽车后市场服务平台。</span>
                     <!--</p>
                     <p>-->
@@ -279,7 +302,7 @@
                         <img src="img/pick-up-car.png" alt="">
                         <p style="color: #39B6FA; " class="common">一键接车</p>
                         <p>手机App扫车牌</p>
-                        <p>只能识别</p>
+                        <p>智能识别</p>
                         <p>自动开单</p>
                     </li>
                     <li>
