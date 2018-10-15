@@ -1,11 +1,11 @@
 
 /*通用配置*/
-* {padding: 0;margin: 0;background: none;box-sizing: border-box;font-size: 14px;font-family: "Microsoft YaHei", "Arial Black", Gadget, sans-serif;}
-body,div,h1,h2,p,ol,ul,li,table,thead,tbody,tr,td,th{border: 0;}
-button, input, select, textarea {font-family: "Microsoft YaHei", "Arial Black", Gadget, sans-serif;font-size: 14px;outline:none;color:#333333;}
-h1, h2, h3, h4 {font-family: "Microsoft YaHei", "Arial Black", Gadget, sans-serif;font-weight: normal;}
+* {padding: 0;margin: 0;background: none;box-sizing: border-box;font-size: 14px;}
+body,div,h1,h2,p,ol,ul,li,table,thead,tbody,tr,td,th{border: 0;font-family: "Microsoft YaHei"}
+button, input, select, textarea {font-size: 14px;outline:none;color:#333333;}
+h1, h2, h3, h4 {font-weight: normal;}
 address, caption, cite, code, dfn, em, strong,  var, b, i {font-style: normal;font-weight: normal;color:#575757;font-size: 14px;}
-pre, code {font-family: "Microsoft YaHei",Consolas, Menlo, "Liberation Mono", Courier, monospace;}
+pre, code {}
 a:link,a:hover,a:visited {text-decoration:none;}
 a{
 	color: #333;
@@ -36,7 +36,7 @@ ul,li,ol {list-style:none;}
 .rotate{transform:rotate(90deg);-ms-transform:rotate(90deg);-moz-transform:rotate(90deg);-webkit-transform:rotate(90deg);-o-transform:rotate(90deg);}
 .rotateTwo {transform:rotate(-180deg);-ms-transform:rotate(-180deg);-moz-transform:rotate(-180deg);-webkit-transform:rotate(-180deg);-o-transform:rotate(-180deg);}
 /*鼠标手型和button的样式(删除边框和背景)*/
-input,button {cursor: pointer;font-family: "Microsoft YaHei", "Arial Black", Gadget, sans-serif;outline:none;border:none;border-radius:2px;}
+input,button {cursor: pointer;outline:none;border:none;border-radius:2px;}
 input[type="text"],input[type="password"]{border:1px solid #e6e7eb;cursor:text;}
 input[type="text"]:focus,input[type="password"]:focus,select:focus{border:1px solid #26C3BA;}
 input[type="text"]:hover,input[type="password"]:hover,select:hover{border:1px solid #26C3BA;}
