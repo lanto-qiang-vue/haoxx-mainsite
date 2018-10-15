@@ -216,7 +216,10 @@
         <div class="banner">
             <figure id="full_feature" class="swipslider">
                 <ul class="sw-slides " id="top-sw1">
-                    
+                    <!--<li class="sw-slide">
+                        <img src="img/park-service.png" alt="">
+                        
+                    </li>-->
                 </ul>
             </figure>
         </div>
@@ -247,8 +250,12 @@
                 </div>
                 
             </div>
-            <div class="content-banner" id="full_advertis">
-                
+            <div class="content-banner" >
+                <figure id="full_feature1" class="swipslider">
+                    <ul class="sw-slides " id="full_advertis">
+                        
+                    </ul>
+                </figure>
 
             </div>
             <div class="content-server">
@@ -289,8 +296,12 @@
                     </li>
                 </ul>
             </div>
-            <div class="content-banner" id="full_data">
-                
+            <div class="content-banner" >
+                <figure id="full_feature2" class="swipslider">
+                    <ul class="sw-slides " id="full_data">
+                        
+                    </ul>
+                </figure>
             </div>
             <div class="content-server">
                 <div class="content-about-top">
@@ -308,15 +319,15 @@
                     <li>
                         <img src="img/car-insurance.png" alt="">
                         <p style="color: #0283DE; " class="common">车险服务</p>
-                        <p>手机App扫车牌</p>
-                        <p>智能报价、提醒</p>
-                        <p>定损维修回店</p>
+                        <p>手机APP智能报价</p>
+                        <p>保险到期提醒</p>
+                        
                     </li>
                     <li>
                         <img src="img/smart-maintain.png" alt="">
                         <p style="color: #0CA6F0; " class="common">智能维修</p>
-                        <p>全系车型整车结构图</p>
                         <p>全系车型保养规则</p>
+                        <p>整车结构图</p>
                         <p>在线商城精准选购配件</p>
                         <p>门店维修无边界</p>
                     </li>
@@ -349,27 +360,46 @@
     <script src="js/swipeslider.min.js"></script>
 
     <script type="text/javascript">
-        
-        
-        
         window.onload=function(){
             $.get("/proxy/Query?code=7009",function(data,status){
+                console.log(data);
                 let getData=JSON.parse(data);
                 let imgTop='';
                 let imgMiddle='';
                 let imgBottom='';
 
+                let imgTopArr=[];
+                let imgMiddleArr=[];
+                let imgBottomArr=[];
+
+                let imgTopFlag=false;
+                let imgMiddleFlag=false;
+                let imgBottomFlag=false;
+
                 for(let i in getData){
                     if(getData[i]['type']==0){
                         imgTop+='<li class="sw-slide"><img src="'+getData[i]['url']+'" alt=""></li>'
+                        imgTopArr.push(getData[i]);
                     }else if(getData[i]['type']==1){
-                        imgMiddle+='<img src="'+getData[i]['url']+'" alt="">';
+                        imgMiddle+='<li class="sw-slide"><img src="'+getData[i]['url']+'" alt=""></li>';
+                        imgMiddleArr.push(getData[i]);
                     }else if(getData[i]['type']==2){
-                        imgBottom+='<img src="'+getData[i]['url']+'" alt="">';
+                        imgBottom+='<li class="sw-slide"><img src="'+getData[i]['url']+'" alt=""></li>';
+                        imgBottomArr.push(getData[i]);
                     }
                 }
                 
-                console.log(imgTop,typeof(data),$('.top-sw1'));
+                if(imgTopArr.length>1){
+                    imgTopFlag=true;
+                }
+
+                if(imgMiddleArr.length>1){
+                    imgMiddleFlag=true;
+                }
+
+                if(imgBottomArr.length>1){
+                    imgBottomFlag=true;
+                }
                 
                 $('#top-sw1').append(imgTop);
                 $('#full_advertis').append(imgMiddle);
@@ -379,8 +409,25 @@
                     transitionDuration: 600,
                     autoPlayTimeout: 8000,
                     sliderHeight: '30%',
-                    autoPlay: true,
-
+                    autoPlay: imgTopFlag,
+                    prevNextButtons: imgTopFlag,
+                    bullets: imgTopFlag
+                });
+                $('#full_feature1').swipeslider({
+                    transitionDuration: 600,
+                    autoPlayTimeout: 8000,
+                    sliderHeight: '19.5%',
+                    autoPlay: imgMiddleFlag,
+                    prevNextButtons: imgMiddleFlag,
+                    bullets: imgMiddleFlag
+                });
+                $('#full_feature2').swipeslider({
+                    transitionDuration: 600,
+                    autoPlayTimeout: 8000,
+                    sliderHeight: '19.5%',
+                    autoPlay: imgBottomFlag,
+                    prevNextButtons: imgBottomFlag,
+                    bullets: imgBottomFlag
                 });
             });
         };
