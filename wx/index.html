@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>https://api.hoxiuxiu.com
 <html>
 <head>
     <meta charset="UTF-8" />
@@ -228,7 +228,7 @@
 
 
         if(urlData['id']){
-            $.get('http://api.hoxiuxiu.com/Query?code=7012&id='+urlData['id'],function(data,status){
+            $.get('https://api.hoxiuxiu.com/Query?code=7012&id='+urlData['id'],function(data,status){
                 let getUser=JSON.parse(data);
                 // console.log(getUser,getUser[0]['licenseNo'],getUser[0]['did']);
                 if(getUser[0]['licenseNo']&&getUser[0]['did']){
@@ -319,7 +319,7 @@
                             }
                         });
 
-                        let imgStrUrl='http://api.qixiu.hoxiuxiu.com/insurance/weixin/qrcode?did='+getUser[0]['did'];
+                        let imgStrUrl='https://api.qixiu.hoxiuxiu.com/insurance/weixin/qrcode?did='+getUser[0]['did'];
                         // console.log(imgStrUrl);
                         $.get(imgStrUrl,function(data,status){
                             //  console.log(data,status);
