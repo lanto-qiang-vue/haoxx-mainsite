@@ -233,7 +233,7 @@
                 // console.log(getUser,getUser[0]['licenseNo'],getUser[0]['did']);
                 if(getUser[0]['licenseNo']&&getUser[0]['did']){
                         $('#car-header').append(getUser[0]['licenseNo']);
-                        let strUrl="http://api.qixiu.hoxiuxiu.com/insurance/quotation/"+getUser[0]['licenseNo'];
+                        let strUrl="https://api.qixiu.hoxiuxiu.com/insurance/quotation/"+getUser[0]['licenseNo'];
                         $.get(strUrl,function(data,status){
 
                             if(data&&data["responseList"][0]['header']['resultCode']=="0000"){
