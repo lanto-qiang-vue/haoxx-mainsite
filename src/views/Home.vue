@@ -52,24 +52,134 @@
 					<p>整合供应链，通过配件商城，实现渠道扁平化和动态进销存，为门店提供低成本、高效的智能化服务。</p>
 				</div>
 			</div>
-			<img class="to-next" src="/img/home/to-next.png"/>
+
 		</div>
+
 	</div>
 	<div class="blocks block1">
+		<img class="to-next" src="/img/home/to-next.png"/>
 		<div class="center">
 			<h2>门店赋能</h2>
+			<div class="body">
+				<div class="main-pic">
+					<img src="/img/home/energize.png"/>
+					<div class="app-er-tag">
+						<img src="/img/home/app-ercode.png"/>
+						<p>扫我下载好修修门店App</p>
+					</div>
+				</div>
+
+				<div class="icon">
+					<img src="/img/home/icon1.png"/>
+					<h3>一键接车</h3>
+					<p>手机App扫车牌／智能识别／自动开单</p>
+				</div>
+				<div class="icon">
+					<img src="/img/home/icon2.png"/>
+					<h3>智能维修</h3>
+					<p>全系车型保养规则／整车结构图/在线商城精准选购配件</p>
+				</div>
+				<div class="icon">
+					<img src="/img/home/icon3.png"/>
+					<h3>客户关系</h3>
+					<p>智能画像／精准服务</p>
+				</div>
+				<div class="icon">
+					<img src="/img/home/icon4.png"/>
+					<h3>进销存</h3>
+					<p>动态库存管理／智能下单补货</p>
+				</div>
+				<div class="icon">
+					<img src="/img/home/icon5.png"/>
+					<h3>车险服务</h3>
+					<p>手机APP智能报价／保险到期提醒</p>
+				</div>
+			</div>
 		</div>
 	</div>
+	<div class="blocks block2">
+		<img class="to-next" src="/img/home/to-next.png"/>
+		<div class="center">
+			<h2>车主服务</h2>
+			<div class="body">
+				<img class="main-pic" src="/img/home/factory-bg.png"/>
+
+				<div class="tag tag1">
+					<div>
+						<p>紧急救援</p>
+						<p>快捷、省心</p>
+					</div>
+					<h3>一键救援</h3>
+				</div>
+				<div class="tag tag2">
+					<div>
+						<p>车位查找</p>
+						<p>错峰停车</p>
+					</div>
+					<h3>停车服务</h3>
+				</div>
+				<div class="tag tag3">
+					<div>
+						<p>查选正规门店</p>
+						<p>远离黑汽修</p>
+					</div>
+					<h3>查选维修</h3>
+				</div>
+				<div class="tag tag4">
+					<div>
+						<p>车辆价值评估</p>
+						<p>二手车增值</p>
+					</div>
+					<h3>二手车服务</h3>
+				</div>
+				<div class="tag tag5">
+					<div>
+						<p>点评服务</p>
+						<p>口碑推荐</p>
+					</div>
+					<h3>维修点评</h3>
+				</div>
+				<div class="tag tag6">
+					<div>
+						<p>查选正规驾校</p>
+						<p>满足个性学车需求</p>
+					</div>
+					<h3>一键救援</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="blocks block3">
+		<!--<img class="to-next" src="/img/home/to-next.png"/>-->
+		<div class="center">
+			<h2>关于我们</h2>
+			<div class="body">
+				<p><span>好修修</span>专注于汽车生活相关大数据的智能化应用，打造以云计算为基础的S2b2C的汽车后市场服务平台。</p>
+				<p>提供汽车使用过程中的稳定性分析与价值评估，制定汽车及零部件的智能维护策略，聚合车主并智能匹配其个性化养车需求。</p>
+				<p>提供SaaS化工具赋能门店，整合上游供应链，提供增值服务，帮助门店，共同服务车主，为车主提供高效、智能、便捷的创新型服务。</p>
+				<p class="bold">让车主都能享受美好的汽车生活是我们的愿景！</p>
+			</div>
+		</div>
+		<div class="advisory">
+			<img src="/img/home/message-bg.png"/>
+			<div>
+				<p>如果您想了解更多业务内容或洽谈合作请立即联系我们，我们将以最快的速度回复您!</p>
+				<h3>在线业务咨询</h3>
+			</div>
+		</div>
+	</div>
+	<hxx-foot></hxx-foot>
 </div>
 </template>
 
 <script>
 import HxxHead from '@/components/Head.vue'
+import HxxFoot from '@/components/Foot.vue'
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
 	name: 'home',
-	components: {HxxHead, swiper, swiperSlide},
+	components: {HxxHead, HxxFoot, swiper, swiperSlide},
 	data(){
 		return{
 			swiperOption:{
@@ -161,12 +271,14 @@ export default {
 			position: absolute;
 			width: 100%;
 			left: 0;
-			bottom: -1px;
+			bottom: -4px;
 			z-index: 2;
+			pointer-events:none;
 		}
 	}
-	.block0{
+	.blocks{
 		text-align: center;
+		position: relative;
 		.center{
 			text-align: left;
 			width: 100%;
@@ -174,73 +286,257 @@ export default {
 			display: inline-block;
 			position: relative;
 			padding: 0 20px;
-			margin-top: 50px;
+			margin: 50px 0;
 			h2{
+				margin-top: 20px;
 				font-size: 30px;
 				text-align: center;
 				font-weight: 400;
 			}
-			.body{
-				margin: 100px 0 150px 0;
-				position: relative;
-				text-align: center;
-				/*background-color: gray;*/
-				.main-pic{
-					width: 50%;
+		}
+		.to-next{
+			width: 130px;
+			position: absolute;
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.block0{
+		.body{
+			margin: 100px 0 ;
+			position: relative;
+			text-align: center;
+			/*background-color: gray;*/
+			.main-pic{
+				width: 50%;
+			}
+			.tab{
+				position: absolute;
+				overflow: hidden;
+				width: 280px;
+				text-align: left;
+				h3{
+					margin: 15px 0;
+					font-size: 18px;
+					font-weight: 600;
+					padding-left: 110px;
 				}
-				.tab{
+				p{
+					padding-left: 110px;
+					color: #6B798E;
+					font-size: 12px;
+					word-wrap: break-word;
+					word-break: break-all;
+				}
+				img{
+					width: 110px;
 					position: absolute;
-					overflow: hidden;
-					width: 280px;
-					text-align: left;
-					h3{
-						margin: 15px 0;
-						font-size: 18px;
-						font-weight: 600;
-						padding-left: 110px;
-					}
-					p{
-						padding-left: 110px;
-						color: #6B798E;
-						font-size: 12px;
-						word-wrap: break-word;
-						word-break: break-all;
-					}
-					img{
-						width: 110px;
-						position: absolute;
-						left: 0;
-						top: 0;
-					}
-				}
-				.tab1{
-					top: -1%;
-					left: 5%;
-				}
-				.tab2{
-					top: 3%;
-					right: 5%;
-				}
-				.tab3{
-					bottom:1%;
-					left: 7%;
-				}
-				.tab4{
-					bottom:1%;
-					right: 5%;
+					left: 0;
+					top: 0;
 				}
 			}
-			.to-next{
-				width: 130px;
-				position: absolute;
-				left: 50%;
-				bottom: 0;
-				transform: translate(-50%, 50%);
+			.tab1{
+				top: -1%;
+				left: 5%;
+			}
+			.tab2{
+				top: 3%;
+				right: 5%;
+			}
+			.tab3{
+				bottom:1%;
+				left: 7%;
+			}
+			.tab4{
+				bottom:1%;
+				right: 5%;
 			}
 		}
 	}
 	.block1{
 		background-color: #F8F8F8;
+		.body{
+			margin: 100px 0 ;
+			position: relative;
+			overflow: hidden;
+			.main-pic{
+				width: 70%;
+				position: absolute;
+				top: 0;
+				right: 0;
+				>img{
+					width: 100%;
+				}
+				.app-er-tag{
+					margin: 20px auto 0 40%;
+					padding: 10px;
+					text-align: center;
+					overflow: hidden;
+					width: 160px;
+					box-shadow:0px 1px 5px 1px rgba(0,0,0,0.11);
+					border-radius:2px;
+					img{
+						width: 100%;
+					}
+					p{
+						font-size: 12px;
+						color: #4A4A4A;
+					}
+				}
+			}
+			.icon{
+				position: relative;
+				margin-bottom: 6%;
+				overflow: hidden;
+				img{
+					width: 80px;
+					float: left;
+				}
+				h3{
+					margin-bottom: 15px;
+					padding-left: 10px;
+					font-size: 18px;
+					font-weight: 600;
+					float: left;
+				}
+				p{
+					color: #4A4A4A;
+					font-size: 14px;
+					white-space: nowrap;
+					position: absolute;
+					left: 90px;
+					top: 40px;
+				}
+
+			}
+		}
+	}
+	.block2{
+		background: url('/img/home/driver-bg.png') no-repeat;
+		background-size: 100% auto;
+		.center h2{
+			color: white;
+		}
+		.body{
+			margin-top: 100px;
+			padding-top: 50px;
+			position: relative;
+			overflow: visible;
+			.main-pic{
+				width: 100%;
+			}
+			.tag{
+				text-align: center;
+				position: absolute;
+				transform: translateX(-50%);
+				div{
+					display: inline-block;
+					padding-left: 15px;
+					position: relative;
+					text-align: left;
+					font-size: 12px;
+					color: white;
+					&:after{
+						content: '';
+						width:6px;
+						height:6px;
+						border:2px solid #0DE791;
+						border-radius: 100%;
+						position: absolute;
+						top: 4px;
+						left: 0;
+					}
+				}
+				h3{
+					/*display: inline-block;*/
+					margin-top: 10px;
+					font-size: 14px;
+					font-weight: 400;
+					color: white;
+					height: 30px;
+					line-height: 30px;
+					padding: 0 20px;
+					background:#FAA536;
+					box-shadow:0 2px 3px 0 #483002;
+					border-radius:20px;
+				}
+			}
+			.tag1{
+				top: 11%;
+				left: 10.55%;
+			}
+			.tag2{
+				top: 3%;
+				left: 23.55%;
+			}
+			.tag3{
+				top: -5%;
+				left: 38%;
+			}
+			.tag4{
+				top: 3%;
+				left: 51%;
+			}
+			.tag5{
+				top: -5%;
+				left: 64.55%;
+			}
+			.tag6{
+				top: 3%;
+				left: 83%;
+			}
+		}
+	}
+	.block3{
+		.center{
+			margin-top: 0;
+			.body{
+				margin: 30px 0;
+				p{
+					font-size: 16px;
+					line-height: 36px;
+					span{
+						color: #2D4996;
+					}
+				}
+				.bold{
+					font-weight: 600;
+				}
+			}
+		}
+		.advisory{
+			position: relative;
+			overflow: hidden;
+			img{
+				width: 100%;
+			}
+			div{
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+				p{
+					font-size: 14px;
+					color: white;
+				}
+				h3{
+					display: inline-block;
+					margin-top: 30px;
+					font-size: 16px;
+					font-weight: 400;
+					color: white;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 40px;
+					background:#FAA536;
+					box-shadow:0 2px 3px 0 #483002;
+					border-radius:20px;
+					cursor: pointer;
+				}
+			}
+		}
 	}
 }
 </style>
