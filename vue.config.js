@@ -15,5 +15,22 @@ module.exports = {
 
 	devServer: {
 		port: 9999,
+		proxy: {
+			'/proxy/': {
+				target: 'https://api.hoxiuxiu.com/',
+				pathRewrite: {'^/proxy/': ''},
+				secure: false
+			},
+			'/proxy-qixiu/': {
+				target: 'http://api.qixiu.hoxiuxiu.com/',
+				pathRewrite: {'^/proxy-qixiu/': ''},
+				secure: false
+			},
+			'/proxy-hxx/': {
+				target: 'http://developer.hxx.hoxiuxiu.com/',
+				pathRewrite: {'^/proxy-hxx/': ''},
+				secure: false
+			},
+		}
 	}
 }

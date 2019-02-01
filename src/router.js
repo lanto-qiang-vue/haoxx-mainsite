@@ -3,13 +3,23 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-export default new Router({
+let route= new Router({
   routes: [
     {
       path: '/',
       name: 'home',
 	    component: () => import('@/views/Home.vue')
     },
+	  {
+      path: '/consult',
+      name: 'consult',
+	    component: () => import('@/views/consult.vue')
+    },
 
   ]
 })
+route.afterEach((to, from) => {
+	window.scrollTo (0, 0);
+})
+
+export default route

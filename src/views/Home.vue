@@ -1,6 +1,6 @@
 <template>
 <div class="home">
-<hxx-head></hxx-head>
+<hxx-head :blockHeight="blockHeight"></hxx-head>
 	<div class="banner">
 		<div class='dummy'></div>
 		<swiper :options="swiperOption" ref="mySwiper" class="banner-swiper">
@@ -14,6 +14,12 @@
 						<p>好修修门店系统</p>
 						<div class="button">立即下载</div>
 					</div>
+				</div>
+
+			</swiper-slide>
+			<swiper-slide>
+				<div class="banner-block">
+					<img src="/img/home/banner-2.png" style="width: 100%;height: 100%"/>
 				</div>
 
 			</swiper-slide>
@@ -164,7 +170,7 @@
 			<img src="/img/home/message-bg.png"/>
 			<div>
 				<p>如果您想了解更多业务内容或洽谈合作请立即联系我们，我们将以最快的速度回复您!</p>
-				<h3>在线业务咨询</h3>
+				<router-link tag="h3" to="/consult">在线业务咨询</router-link>
 			</div>
 		</div>
 	</div>
@@ -204,9 +210,29 @@ export default {
 					delay: 8000,
 					disableOnInteraction: false,
 				},
+			},
+			blockHeight: {
+				finish: false,
 			}
 		}
 	},
+	mounted(){
+		this.calcHeight()
+	},
+	methods:{
+		calcHeight(){
+			for(let i=1; i<4; i++){
+				// console.log('i=', i)
+				let blickName= 'block'+i
+				let dom= document.querySelector('.'+blickName)
+				this.blockHeight[blickName]={
+					start: dom.offsetTop,
+					end: dom.offsetTop+ dom.offsetHeight
+				}
+			}
+			this.blockHeight.finish= true
+		},
+	}
 }
 </script>
 
@@ -510,6 +536,7 @@ export default {
 		.advisory{
 			position: relative;
 			overflow: hidden;
+			background-color: #373D41;
 			img{
 				width: 100%;
 			}

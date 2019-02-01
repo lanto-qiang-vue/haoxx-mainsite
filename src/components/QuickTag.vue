@@ -1,7 +1,7 @@
 <template>
 <ul class="quick-tag">
 
-	<li class="top">
+	<li class="top" @click="toTop">
 		<p class="triangle"></p>
 		<div><i></i></div>
 	</li>
@@ -12,13 +12,25 @@
 		</div>
 	</li>
 	<li><i class="fa fa-qq" style="font-size: 20px"></i></li>
-	<li><i class="fa fa-commenting-o nostroke" style="font-size: 23px"></i></li>
+	<li @click="toConsult"><i class="fa fa-commenting-o nostroke" style="font-size: 23px"></i></li>
 </ul>
 </template>
 
 <script>
 export default {
-	name: "quick-tag"
+	name: "quick-tag",
+	methods:{
+		toTop(){
+			let currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+			if (currentScroll > 0) {
+				window.requestAnimationFrame(this.toTop);
+				window.scrollTo (0,currentScroll - (currentScroll/5));
+			}
+		},
+		toConsult(){
+			window.open('/#/consult', '_blank')
+		}
+	}
 }
 </script>
 
@@ -30,7 +42,7 @@ export default {
 	position: fixed;
 	width: 40px;
 	right: 30px;
-	bottom: 40%;
+	bottom: 30%;
 	z-index: 50;
 	li{
 		background-color: @bg;

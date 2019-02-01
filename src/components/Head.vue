@@ -1,12 +1,12 @@
 <template>
 <div class="hxx-head">
 	<div class="center">
-		<img src="/img/home/hoxiuxiu-logo.png"/>
+		<router-link tag="img" to="/" src="/img/home/hoxiuxiu-logo.png"></router-link>
 		<ul class="right">
-			<li class="on">门店赋能</li>
-			<li>车主服务</li>
-			<li>关于我们</li>
-			<li>联系我们</li>
+			<li :class="{on: blockName=='block1'}">门店赋能</li>
+			<li :class="{on: blockName=='block2'}">车主服务</li>
+			<li :class="{on: blockName=='block3'}">关于我们</li>
+			<li :class="{on: blockName=='block4'}">联系我们</li>
 		</ul>
 	</div>
 </div>
@@ -14,7 +14,26 @@
 
 <script>
 export default {
-	name: "hxx-head"
+	name: "hxx-head",
+	props: ['blockHeight'],
+	data(){
+		return{
+			blockName: '',
+		}
+	},
+	computed:{
+		isIndex(){
+			return this.$route.name=='home'
+		},
+		hasHeight(){
+			return this.blockHeight.finish
+		}
+	},
+	methods:{
+		calcPlace(){
+			let centerHeight= window.innerHeight/2
+		}
+	}
 }
 </script>
 
@@ -39,12 +58,13 @@ export default {
 		display: inline-block;
 		position: relative;
 		img{
-			width: 80px;
+			width: 100px;
 			vertical-align: middle;
 			position: absolute;
 			top: 0;
 			bottom: 0;
 			margin: auto;
+			cursor: pointer;
 		}
 		.right{
 			float: right;

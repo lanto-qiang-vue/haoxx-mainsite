@@ -7,12 +7,12 @@
 				<p>全国客服热线</p>
 				<h4><i class="fa fa-phone"></i>400-663-8210</h4>
 				<p>总机：021-95779016</p>
-				<p>邮箱：hoxiuxiu@lantoev.com</p>
+				<p><a href="mailto:hoxiuxiu@lantoev.com">邮箱：hoxiuxiu@lantoev.com</a></p>
 			</li>
 			<li class="long">
 				<p>公司地址：上海市长宁区淞虹路207号明基商务广场C栋4楼B座</p>
 				<p>官方QQ：3181682369</p>
-				<p>官方微博：<a href="https://weibo.com/hoxiuxiu" target="_blank"><i class="fa fa-weibo"></i></a></p>
+				<p><a href="https://weibo.com/hoxiuxiu" target="_blank">官方微博：<i class="fa fa-weibo"></i></a></p>
 			</li>
 			<li>
 				<div class="ercode">
@@ -30,7 +30,7 @@
 	</div>
 	<hr/>
 	<div class="center">
-		<footer>Copyright© 2019 上海衡益网络技术有限公司.All Rights Reserved | 沪ICP备18016827号-1</footer>
+		<footer>Copyright© 2019 上海衡益网络技术有限公司.All Rights Reserved | <a href="http://www.miitbeian.gov.cn" target="_blank">沪ICP备18016827号-1</a></footer>
 	</div>
 </div>
 </template>
@@ -65,7 +65,7 @@ export default {
 		ul{
 			overflow: visible;
 			li{
-				width: 23%;
+				width: 22%;
 				display: inline-block;
 				padding: 0 10px;
 				vertical-align: top;
@@ -102,7 +102,7 @@ export default {
 				}
 			}
 			.long{
-				width: 30%;
+				width: 32%;
 			}
 		}
 	}
