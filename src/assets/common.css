@@ -15,3 +15,15 @@ img{vertical-align:top;border:none}
 input{
   -webkit-user-select: text;
 }
+
+a{
+    color: inherit;
+}
+
+*{
+    transition: all .5s;
+}
+
+.fa{
+    pointer-events:none;
+}

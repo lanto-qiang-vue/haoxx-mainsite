@@ -30,6 +30,7 @@ export default {
 	box-shadow:0 2px 3px 0 rgba(0,0,0,0.17);
 	z-index: 10;
 	background-color: white;
+	-webkit-transform: translateZ(0);
 	.center{
 		text-align: left;
 		width: 100%;

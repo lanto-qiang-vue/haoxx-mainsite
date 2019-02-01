@@ -169,17 +169,19 @@
 		</div>
 	</div>
 	<hxx-foot></hxx-foot>
+	<quick-tag></quick-tag>
 </div>
 </template>
 
 <script>
 import HxxHead from '@/components/Head.vue'
 import HxxFoot from '@/components/Foot.vue'
+import QuickTag from '@/components/QuickTag.vue'
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
 	name: 'home',
-	components: {HxxHead, HxxFoot, swiper, swiperSlide},
+	components: {HxxHead, HxxFoot, QuickTag, swiper, swiperSlide},
 	data(){
 		return{
 			swiperOption:{
@@ -520,6 +522,7 @@ export default {
 				p{
 					font-size: 14px;
 					color: white;
+					white-space: nowrap;
 				}
 				h3{
 					display: inline-block;
