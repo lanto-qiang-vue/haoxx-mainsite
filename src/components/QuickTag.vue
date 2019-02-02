@@ -11,7 +11,7 @@
 			<p>400-663-8210</p>
 		</div>
 	</li>
-	<li><i class="fa fa-qq" style="font-size: 20px"></i></li>
+	<li @click="toQQ"><i class="fa fa-qq" style="font-size: 20px"></i></li>
 	<li @click="toConsult"><i class="fa fa-commenting-o nostroke" style="font-size: 23px"></i></li>
 </ul>
 </template>
@@ -26,6 +26,9 @@ export default {
 				window.requestAnimationFrame(this.toTop);
 				window.scrollTo (0,currentScroll - (currentScroll/5));
 			}
+		},
+		toQQ(){
+			window.open('tencent://message/?uin=3181682369')
 		},
 		toConsult(){
 			window.open('/#/consult', '_blank')

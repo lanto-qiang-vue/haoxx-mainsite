@@ -11,7 +11,7 @@
 			</li>
 			<li class="long">
 				<p>公司地址：上海市长宁区淞虹路207号明基商务广场C栋4楼B座</p>
-				<p>官方QQ：3181682369</p>
+				<p><a href="tencent://message/?uin=3181682369">官方QQ：3181682369</a></p>
 				<p><a href="https://weibo.com/hoxiuxiu" target="_blank">官方微博：<i class="fa fa-weibo"></i></a></p>
 			</li>
 			<li>
@@ -21,10 +21,10 @@
 				</div>
 			</li>
 			<li>
-				<p>门店赋能</p>
-				<p>车主服务</p>
-				<p>关于我们</p>
-				<p>联系我们</p>
+				<p @click="$emit('toRoll', 'block1')"><a>门店赋能</a></p>
+				<p @click="$emit('toRoll', 'block2')"><a>车主服务</a></p>
+				<p @click="$emit('toRoll', 'block3')"><a>关于我们</a></p>
+				<p @click="$emit('toRoll', 'block4')"><a>联系我们</a></p>
 			</li>
 		</ul>
 	</div>

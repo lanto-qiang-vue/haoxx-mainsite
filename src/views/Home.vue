@@ -1,6 +1,6 @@
 <template>
 <div class="home">
-<hxx-head :blockHeight="blockHeight"></hxx-head>
+<hxx-head :blockHeight="blockHeight" :scrollTop="scrollTop" ref="header"></hxx-head>
 	<div class="banner">
 		<div class='dummy'></div>
 		<swiper :options="swiperOption" ref="mySwiper" class="banner-swiper">
@@ -12,7 +12,7 @@
 					<h1 class="t2">服务亿万车主</h1>
 					<div class="t3">
 						<p>好修修门店系统</p>
-						<div class="button">立即下载</div>
+						<div class="button" @click="showModal= true">立即下载</div>
 					</div>
 				</div>
 
@@ -174,8 +174,24 @@
 			</div>
 		</div>
 	</div>
-	<hxx-foot></hxx-foot>
-	<quick-tag></quick-tag>
+	<div class="block4">
+		<hxx-foot @toRoll="toRoll"></hxx-foot>
+	</div>
+	<quick-tag v-show="showTip"></quick-tag>
+	<div class="modal" v-show="showModal">
+		<div class="mask"></div>
+		<div class="content">
+			<div class="left">
+				<p>扫我下载好修修门店App</p>
+				<img src="/img/home/app-ercode.png"/>
+			</div>
+			<div class="right" @click="goHxx">
+				<p>好修修门店系统<span>（电脑端）</span></p>
+				<small>点击在线使用</small>
+			</div>
+			<i class="fa fa-times close" @click="showModal= false"></i>
+		</div>
+	</div>
 </div>
 </template>
 
@@ -213,15 +229,41 @@ export default {
 			},
 			blockHeight: {
 				finish: false,
-			}
+			},
+			showTip: false,
+			showModal: false,
+			timer: null,
+			scrollTop: 0
 		}
 	},
 	mounted(){
-		this.calcHeight()
+		setTimeout(()=>{
+			this.calcHeight()
+		},50)
+
+		window.onresize = ()=>{
+			if(this.timer){
+				clearTimeout(this.timer)
+				this.timer= null
+			}
+			this.timer= setTimeout(()=>{
+				this.calcHeight()
+			}, 500)
+		}
+
+		window.onscroll= ()=>{
+			// console.log('window.onscroll')
+			let  top = document.documentElement.scrollTop||document.body.scrollTop;
+			this.showTip= top> 200?  true: false
+			if(Math.abs(top - this.scrollTop)  >20){
+				this.scrollTop= top
+			}
+
+		}
 	},
 	methods:{
 		calcHeight(){
-			for(let i=1; i<4; i++){
+			for(let i=1; i<=4; i++){
 				// console.log('i=', i)
 				let blickName= 'block'+i
 				let dom= document.querySelector('.'+blickName)
@@ -232,6 +274,12 @@ export default {
 			}
 			this.blockHeight.finish= true
 		},
+		toRoll(name){
+			this.$refs.header.rollTo(name)
+		},
+		goHxx(){
+			window.open('https://hxx.hoxiuxiu.com/login', '_blank')
+		}
 	}
 }
 </script>
@@ -281,14 +329,14 @@ export default {
 					.button{
 						margin-top: 20px;
 						display: inline-block;
-						padding: 0 20px;
+						padding: 0 30px;
 						font-size: 14px;
 						height: 30px;
 						line-height: 30px;
 						color: white;
 						text-align: center;
 						background:linear-gradient(90deg,rgba(249,172,59,1) 0%,rgba(255,102,15,1) 100%);
-						box-shadow:0 4px 9px 3px rgba(112,60,2,0.61);
+						box-shadow:0px 4px 9px 3px rgba(112,60,2,0.61);
 						border-radius:24px;
 						cursor: pointer;
 					}
@@ -561,12 +609,94 @@ export default {
 					line-height: 40px;
 					padding: 0 40px;
 					background:#FAA536;
-					box-shadow:0 2px 3px 0 #483002;
+					box-shadow:0px 3px 6px 0px rgba(171,92,5,1);;
 					border-radius:20px;
 					cursor: pointer;
 				}
 			}
 		}
+	}
+	.modal{
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		overflow: hidden;
+		left: 0;
+		top: 0;
+		z-index: 30;
+		.mask{
+			width: 100%;
+			height: 100%;
+			background-color: #4A4A4A;
+			opacity: .2;
+		}
+		.content{
+			position: absolute;
+			top: 30%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: white;
+			border-radius:2px;
+			overflow: hidden;
+			padding: 30px 30px 50px;
+			white-space: nowrap;
+			width: 430px;
+		}
+		.left{
+			width: 160px;
+			display: inline-block;
+			margin-right: 30px;
+			vertical-align: middle;
+			p{
+				font-size: 12px;
+				color: #4A4A4A;
+				text-align: center;
+				padding-bottom: 10px;
+			}
+			img{
+				width: 100%;
+				border: 1px solid #C9C9C9;
+			}
+
+		}
+		.right{
+			display: inline-block;
+			vertical-align: middle;
+			background:linear-gradient(90deg,rgba(249,172,59,1) 0%,rgba(255,102,15,1) 100%);
+			box-shadow:0px 3px 5px 0px rgba(171,92,5,0.39);
+			border-radius:3px;
+			color: white;
+			text-align: center;
+			padding: 10px;
+			font-size: 14px;
+			cursor: pointer;
+			small, span{
+				font-size: 12px;
+			}
+		}
+		.close{
+			font-size: 14px;
+			color: #000000;
+			padding: 10px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			opacity: .4;
+			cursor: pointer;
+			pointer-events: auto;
+		}
+	}
+}
+</style>
+<style lang="less">
+.home{
+	.swiper-pagination-bullet{
+		width: 20px;
+		height: 2px;
+		border-radius: 0;
+	}
+	.swiper-pagination-bullet-active{
+		background-color: white;
 	}
 }
 </style>

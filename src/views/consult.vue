@@ -1,6 +1,6 @@
 <template>
 <div class="to-consult">
-<hxx-head></hxx-head>
+<hxx-head ref="header"></hxx-head>
 <div class="body">
 	<div class="center" v-show="!success">
 		<h1>在线业务咨询</h1>
@@ -33,7 +33,7 @@
 		<span>{{second}}秒后自动返回到首页</span>
 	</div>
 </div>
-<hxx-foot></hxx-foot>
+<hxx-foot @toRoll="toRoll"></hxx-foot>
 </div>
 </template>
 
@@ -100,6 +100,9 @@ export default {
 					this.second--
 				}
 			},1000)
+		},
+		toRoll(name){
+			this.$refs.header.rollTo(name)
 		}
 	}
 }
