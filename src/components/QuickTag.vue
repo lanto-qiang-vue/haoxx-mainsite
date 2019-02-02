@@ -28,7 +28,7 @@ export default {
 			}
 		},
 		toQQ(){
-			window.open('tencent://message/?uin=3181682369')
+			window.open('tencent://message/?Site=3181682369')
 		},
 		toConsult(){
 			window.open('/#/consult', '_blank')
