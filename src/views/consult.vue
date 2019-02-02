@@ -3,27 +3,30 @@
 <hxx-head ref="header"></hxx-head>
 <div class="body">
 	<div class="center" v-show="!success">
-		<h1>在线业务咨询</h1>
-		<small>申请与好修修客服联系以便及时解决您的问题</small>
-		<Form :model="form" label-position="top" class="consult-form" :rules="ruleValidate" ref="form">
-			<FormItem label="姓名" prop="name">
-				<Input v-model="form.name" size="large"></Input>
-			</FormItem>
-			<FormItem label="公司" prop="company">
-				<Input v-model="form.company" size="large"></Input>
-			</FormItem>
-			<FormItem label="手机号" prop="tel">
-				<Input v-model="form.tel" size="large" :maxlength="11"></Input>
-			</FormItem>
-			<FormItem label="电子邮箱地址" prop="email">
-				<Input v-model="form.email" size="large"></Input>
-			</FormItem>
-			<FormItem label="请在此输入您的问题" prop="note">
-				<Input v-model="form.note" type="textarea" :rows="8" size="large"></Input>
-			</FormItem>
-		</Form>
-		<small>提交后我们将尽快与您取得联系</small>
-		<div class="submit" @click="submit">提交</div>
+		<div class="middle">
+			<h1>在线业务咨询</h1>
+			<small>申请与好修修客服联系以便及时解决您的问题</small>
+			<Form :model="form" label-position="top" class="consult-form" :rules="ruleValidate" ref="form">
+				<FormItem label="姓名" prop="name">
+					<Input v-model="form.name" size="large"></Input>
+				</FormItem>
+				<FormItem label="公司" prop="company">
+					<Input v-model="form.company" size="large"></Input>
+				</FormItem>
+				<FormItem label="手机号" prop="tel">
+					<Input v-model="form.tel" size="large" :maxlength="11"></Input>
+				</FormItem>
+				<FormItem label="电子邮箱地址" prop="email">
+					<Input v-model="form.email" size="large"></Input>
+				</FormItem>
+				<FormItem label="请在此输入您的问题" prop="note">
+					<Input v-model="form.note" type="textarea" :rows="8" size="large"></Input>
+				</FormItem>
+			</Form>
+			<small>提交后我们将尽快与您取得联系</small>
+			<div class="submit" @click="submit">提交</div>
+		</div>
+
 	</div>
 	<div class="success" v-show="success">
 		<img src="/svg/right.svg">
@@ -118,7 +121,6 @@ export default {
 		min-height: 60vh;
 		position: relative;
 		.center{
-			text-align: left;
 			width: 100%;
 			max-width: 1000px;
 			display: inline-block;
@@ -128,17 +130,25 @@ export default {
 			border-radius:5px;
 			padding: 30px 16% 50px;
 			overflow: hidden;
-			h1{
-				font-size: 20px;
-				margin-bottom: 20px;
+			.middle{
+				text-align: left;
+				display: inline-block;
+				position: relative;
+				width: 500px;
+				overflow: hidden;
+				h1{
+					font-size: 20px;
+					margin-bottom: 20px;
+				}
+				small{
+					color: #555556;
+					font-size: 12px;
+				}
+				.consult-form{
+					margin-top: 30px;
+				}
 			}
-			small{
-				color: #555556;
-				font-size: 12px;
-			}
-			.consult-form{
-				margin-top: 30px;
-			}
+
 
 		}
 		.success{
