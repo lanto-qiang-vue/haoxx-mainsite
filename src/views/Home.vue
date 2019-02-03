@@ -223,7 +223,7 @@ export default {
 					// prevEl: '.swiper-button-prev',
 				},
 				autoplay: {
-					delay: 8000,
+					delay: 3000,
 					disableOnInteraction: false,
 				},
 			},
