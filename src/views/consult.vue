@@ -96,8 +96,9 @@ export default {
 		},
 		toSuccess(){
 			this.success= true
-			setInterval(()=>{
+			let timer=setInterval(()=>{
 				if(this.second<=0){
+					clearInterval(timer)
 					this.$router.push('/')
 				}else{
 					this.second--
