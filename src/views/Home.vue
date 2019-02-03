@@ -3,7 +3,7 @@
 <hxx-head :blockHeight="blockHeight" :scrollTop="scrollTop" ref="header"></hxx-head>
 	<div class="banner">
 		<div class='dummy'></div>
-		<swiper :options="swiperOption" ref="mySwiper" class="banner-swiper">
+		<swiper :options="swiperOption" ref="banner" class="banner-swiper">
 			<!-- slides -->
 			<swiper-slide>
 				<div class="banner-block">
@@ -12,7 +12,7 @@
 					<h1 class="t2">服务亿万车主</h1>
 					<div class="t3">
 						<p>好修修门店系统</p>
-						<div class="button" @click="showModal= true">立即下载</div>
+						<div class="modal-button">立即下载</div>
 					</div>
 				</div>
 
@@ -150,7 +150,7 @@
 						<p>查选正规驾校</p>
 						<p>满足个性学车需求</p>
 					</div>
-					<h3>一键救援</h3>
+					<h3>学车找我</h3>
 				</div>
 			</div>
 		</div>
@@ -237,6 +237,13 @@ export default {
 		}
 	},
 	mounted(){
+		document.querySelector('.banner').addEventListener('click', (e)=>{
+			let target = e.target || e.srcElement;
+			if (!!target && target.className==='modal-button') {
+				this.showModal= true
+			}
+		})
+
 		setTimeout(()=>{
 			this.calcHeight()
 		},50)
@@ -326,7 +333,7 @@ export default {
 						font-size: 18px;
 						color: white;
 					}
-					.button{
+					.modal-button{
 						margin-top: 20px;
 						display: inline-block;
 						padding: 0 30px;

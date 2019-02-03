@@ -6,7 +6,7 @@
 			<li>
 				<p>全国客服热线</p>
 				<h4><i class="fa fa-phone"></i>400-663-8210</h4>
-				<p>总机：021-95779016</p>
+				<p>总机：021-23571898</p>
 				<p><a href="mailto:hoxiuxiu@lantoev.com">邮箱：hoxiuxiu@lantoev.com</a></p>
 			</li>
 			<li class="long">
