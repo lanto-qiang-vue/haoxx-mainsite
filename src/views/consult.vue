@@ -96,7 +96,7 @@ export default {
 		},
 		toSuccess(){
 			this.success= true
-			setTimeout(()=>{
+			setInterval(()=>{
 				if(this.second<=0){
 					this.$router.push('/')
 				}else{

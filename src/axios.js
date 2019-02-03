@@ -16,7 +16,7 @@ axios.interceptors.request.use(config => {
 	if(contentType.indexOf('application/x-www-form-urlencoded')>=0){
 		let form = new FormData();
 		for(let key in data){
-			form.append(key, JSON.stringify(data[key]));
+			form.append(key, data[key]);
 		}
 		config.data= form
 	}
