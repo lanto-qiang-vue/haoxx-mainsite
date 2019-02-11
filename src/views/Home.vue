@@ -1,6 +1,6 @@
 <template>
 <div class="home">
-<hxx-head :blockHeight="blockHeight" :scrollTop="scrollTop" ref="header"></hxx-head>
+<hxx-head :blockHeight="blockHeight" :scrollTop="scrollTop" ref="header" @blockName="inBlock"></hxx-head>
 	<div class="banner">
 		<div class='dummy'></div>
 		<swiper :options="swiperOption" ref="banner" class="banner-swiper">
@@ -37,22 +37,22 @@
 			<h2>让车主都能享受美好的汽车生活</h2>
 			<div class="body">
 				<img class="main-pic" src="/img/home/big-data.png"/>
-				<div class="tab tab1">
+				<div class="tab tab1 on">
 					<img src="/img/home/tab1.png"/>
 					<h3>智能服务</h3>
 					<p>智能识别汽车的显性和隐性需求，主动、高效、安全、绿色地为您的汽车生活服务。</p>
 				</div>
-				<div class="tab tab2">
+				<div class="tab tab2 on">
 					<img src="/img/home/tab2.png"/>
 					<h3>SaaS门店</h3>
 					<p>针对维修门店的痛点，提供涵盖PC端和移动端的、使用便捷的智能化SaaS经营管理工具。</p>
 				</div>
-				<div class="tab tab3">
+				<div class="tab tab3 on">
 					<img src="/img/home/tab3.png"/>
 					<h3>车辆价值评估</h3>
 					<p>通过大数据和云计算，提供汽车使用过程的稳定性分析与价值评估。</p>
 				</div>
-				<div class="tab tab4">
+				<div class="tab tab4 on">
 					<img src="/img/home/tab4.png"/>
 					<h3>高效供应链</h3>
 					<p>整合供应链，通过配件商城，实现渠道扁平化和动态进销存，为门店提供低成本、高效的智能化服务。</p>
@@ -75,27 +75,27 @@
 					</div>
 				</div>
 
-				<div class="icon">
+				<div class="icon on">
 					<img src="/img/home/icon1.png"/>
 					<h3>一键接车</h3>
 					<p>手机App扫车牌／智能识别／自动开单</p>
 				</div>
-				<div class="icon">
+				<div class="icon on">
 					<img src="/img/home/icon2.png"/>
 					<h3>智能维修</h3>
 					<p>全系车型保养规则／整车结构图/在线商城精准选购配件</p>
 				</div>
-				<div class="icon">
+				<div class="icon on">
 					<img src="/img/home/icon3.png"/>
 					<h3>客户关系</h3>
 					<p>智能画像／精准服务</p>
 				</div>
-				<div class="icon">
+				<div class="icon on">
 					<img src="/img/home/icon4.png"/>
 					<h3>进销存</h3>
 					<p>动态库存管理／智能下单补货</p>
 				</div>
-				<div class="icon">
+				<div class="icon on">
 					<img src="/img/home/icon5.png"/>
 					<h3>车险服务</h3>
 					<p>手机APP智能报价／保险到期提醒</p>
@@ -110,42 +110,42 @@
 			<div class="body">
 				<img class="main-pic" src="/img/home/factory-bg.png"/>
 
-				<div class="tag tag1">
+				<div class="tag tag1 on">
 					<div>
 						<p>紧急救援</p>
 						<p>快捷、省心</p>
 					</div>
 					<h3>一键救援</h3>
 				</div>
-				<div class="tag tag2">
+				<div class="tag tag2 on">
 					<div>
 						<p>车位查找</p>
 						<p>错峰停车</p>
 					</div>
 					<h3>停车服务</h3>
 				</div>
-				<div class="tag tag3">
+				<div class="tag tag3 on">
 					<div>
 						<p>查选正规门店</p>
 						<p>远离黑汽修</p>
 					</div>
 					<h3>查选维修</h3>
 				</div>
-				<div class="tag tag4">
+				<div class="tag tag4 on">
 					<div>
 						<p>车辆价值评估</p>
 						<p>二手车增值</p>
 					</div>
 					<h3>二手车服务</h3>
 				</div>
-				<div class="tag tag5">
+				<div class="tag tag5 on">
 					<div>
 						<p>点评服务</p>
 						<p>口碑推荐</p>
 					</div>
 					<h3>维修点评</h3>
 				</div>
-				<div class="tag tag6">
+				<div class="tag tag6 on">
 					<div>
 						<p>查选正规驾校</p>
 						<p>满足个性学车需求</p>
@@ -167,7 +167,7 @@
 			</div>
 		</div>
 		<div class="advisory">
-			<img src="/img/home/message-bg.png"/>
+			<!--<img src="/img/home/message-bg.png"/>-->
 			<div>
 				<p>如果您想了解更多业务内容或洽谈合作请立即联系我们，我们将以最快的速度回复您!</p>
 				<router-link tag="h3" to="/consult">在线业务咨询</router-link>
@@ -270,7 +270,7 @@ export default {
 	},
 	methods:{
 		calcHeight(){
-			for(let i=1; i<=4; i++){
+			for(let i=0; i<=4; i++){
 				// console.log('i=', i)
 				let blickName= 'block'+i
 				let dom= document.querySelector('.'+blickName)
@@ -286,6 +286,46 @@ export default {
 		},
 		goHxx(){
 			window.open('https://hxx.hoxiuxiu.com/login', '_blank')
+		},
+		inBlock(name){
+			console.log('inBlock:', name)
+			if(!document.querySelector('.'+name).classList.contains('on')){
+
+				function timeout(dom) {
+					return new Promise((resolve) => {
+						setTimeout(()=>{
+							dom.style.cssText= ''
+							dom.classList.remove('on')
+							resolve()
+						}, 200);
+					});
+				}
+
+				async function asyncPrint(domes) {
+					for(let i in domes){
+						if(parseInt(i)>=0) {
+							await timeout(domes[i]);
+						}
+					}
+				}
+
+				switch (name){
+					case 'block0':{
+						asyncPrint(document.querySelectorAll('.block0 .tab'))
+						break
+					}
+					case 'block1':{
+						asyncPrint(document.querySelectorAll('.block1 .icon'))
+						break
+					}
+					case 'block2':{
+						asyncPrint(document.querySelectorAll('.block2 .tag'))
+						break
+					}
+				}
+				document.querySelector('.'+name).classList.add('on')
+			}
+
 		}
 	}
 }
@@ -435,6 +475,10 @@ export default {
 				bottom:1%;
 				right: 5%;
 			}
+			.tab.on{
+				transform: translate(0, -50px);
+				opacity: 0;
+			}
 		}
 	}
 	.block1{
@@ -492,6 +536,10 @@ export default {
 					top: 40px;
 				}
 
+			}
+			.icon.on{
+				transform: translate(0, -50px);
+				opacity: 0;
 			}
 		}
 	}
@@ -569,6 +617,10 @@ export default {
 				top: 3%;
 				left: 83%;
 			}
+			.tag.on{
+				transform: translate(-50%, -50px);
+				opacity: 0;
+			}
 		}
 	}
 	.block3{
@@ -591,9 +643,19 @@ export default {
 		.advisory{
 			position: relative;
 			overflow: hidden;
-			background-color: #373D41;
+			height: 160px;
+			/*background-color: #373D41;*/
+			background: #373D41 url('/img/home/message-bg.png') no-repeat center center;
+			background-size: cover;
 			img{
 				width: 100%;
+				height: 100%;
+				min-height: 100%;
+				min-width: 100%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 			}
 			div{
 				position: absolute;

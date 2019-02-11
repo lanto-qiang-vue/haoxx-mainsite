@@ -33,6 +33,9 @@ export default {
 	watch:{
 		scrollTop(val){
 			this.calcPlace(val)
+		},
+		blockName(val){
+			this.$emit('blockName', val)
 		}
 	},
 	mounted(){
@@ -44,6 +47,10 @@ export default {
 			}, 500)
 
 		}
+		setTimeout(()=>{
+			this.calcPlace(this.scrollTop)
+		}, 500)
+
 	},
 	methods:{
 		calcPlace(scrollTop){

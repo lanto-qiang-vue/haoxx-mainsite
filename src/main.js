@@ -8,6 +8,7 @@ import '@/assets/common.css'
 Vue.config.productionTip = false
 
 import axios from './axios.js'
+import './api.js'
 Vue.prototype.$axios = axios;
 import { Input, Form, FormItem } from 'iview';
 Vue.component('Input', Input);
