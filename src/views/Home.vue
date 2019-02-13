@@ -461,12 +461,12 @@ export default {
 			.tab{
 				position: absolute;
 				overflow: hidden;
-				width: 280px;
+				width: 320px;
 				text-align: left;
 				h3{
 					margin: 15px 0;
 					font-size: 22px;
-					font-weight: 600;
+					font-weight: 500;
 					padding-left: 110px;
 				}
 				p{
@@ -485,7 +485,7 @@ export default {
 			}
 			.tab1{
 				top: -1%;
-				left: 5%;
+				left: 1%;
 			}
 			.tab2{
 				top: 3%;
@@ -493,11 +493,11 @@ export default {
 			}
 			.tab3{
 				bottom:1%;
-				left: 7%;
+				left: 3%;
 			}
 			.tab4{
 				bottom:1%;
-				right: 5%;
+				right: 1%;
 			}
 			.tab.on{
 				transform: translate(0, -50px);
@@ -512,7 +512,7 @@ export default {
 			position: relative;
 			min-height: 760px;
 			.main-pic{
-				width: 70%;
+				width: 65%;
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -524,7 +524,7 @@ export default {
 					padding: 10px;
 					text-align: center;
 					overflow: hidden;
-					width: 160px;
+					width: 170px;
 					box-shadow:0px 1px 5px 1px rgba(0,0,0,0.11);
 					border-radius:2px;
 					img{
@@ -551,7 +551,7 @@ export default {
 					margin-bottom: 15px;
 					padding-left: 10px;
 					font-size: 22px;
-					font-weight: 600;
+					font-weight: 500;
 					float: left;
 				}
 				p{
@@ -634,7 +634,7 @@ export default {
 					/*display: inline-block;*/
 					margin-top: 10px;
 					font-size: 18px;
-					font-weight: 600;
+					font-weight: 500;
 					color: white;
 					height: 40px;
 					line-height: 40px;
@@ -684,17 +684,18 @@ export default {
 					line-height: 36px;
 					span{
 						color: #2D4996;
+						font-weight: 500;
 					}
 				}
 				.bold{
-					font-weight: 600;
+					font-weight: 500;
 				}
 			}
 		}
 		.advisory{
 			position: relative;
 			overflow: hidden;
-			height: 160px;
+			height: 180px;
 			/*background-color: #373D41;*/
 			background: #373D41 url('/img/home/message-bg.png') no-repeat center center;
 			background-size: cover;

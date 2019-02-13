@@ -7,12 +7,12 @@
 				<p>全国客服热线</p>
 				<h4><i class="fa fa-phone"></i>400-663-8210</h4>
 				<p>总机：021-23571898</p>
-				<p><a href="mailto:hoxiuxiu@lantoev.com">邮箱：hoxiuxiu@lantoev.com</a></p>
+				<p>邮箱：<a href="mailto:hoxiuxiu@lantoev.com">hoxiuxiu@lantoev.com</a></p>
 			</li>
 			<li class="long">
 				<p>公司地址：上海市长宁区淞虹路207号明基商务广场C栋4楼B座</p>
-				<p><a href="tencent://message/?Site=3181682369">官方QQ：3181682369</a></p>
-				<p><a href="https://weibo.com/hoxiuxiu" target="_blank">官方微博：<i class="fa fa-weibo"></i></a></p>
+				<p>官方QQ：<a href="tencent://message/?Site=3181682369">3181682369</a></p>
+				<p>官方微博：<a href="https://weibo.com/hoxiuxiu" target="_blank"><i class="fa fa-weibo"></i></a></p>
 			</li>
 			<li>
 				<div class="ercode">
@@ -84,7 +84,7 @@ export default {
 				}
 				p{
 					line-height: 20px;
-					margin-bottom: 5px;
+					margin-bottom: 8px;
 				}
 				.fa-weibo{
 					font-size: 20px;
