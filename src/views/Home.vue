@@ -1,6 +1,7 @@
 <template>
 <div class="home">
 <hxx-head :blockHeight="blockHeight" :scrollTop="scrollTop" ref="header" @blockName="inBlock"></hxx-head>
+	<div class="blocks">
 	<div class="banner">
 		<div class='dummy'></div>
 		<swiper :options="swiperOption" ref="banner" class="banner-swiper">
@@ -8,11 +9,13 @@
 			<swiper-slide>
 				<div class="banner-block">
 					<img src="/img/home/banner-1.png" style="width: 100%;height: 100%"/>
-					<h1 class="t1">赋能万千门店</h1>
-					<h1 class="t2">服务亿万车主</h1>
-					<div class="t3">
-						<p>好修修门店系统</p>
-						<div class="modal-button">立即下载</div>
+					<div class="text">
+						<h1 class="t1">赋能万千门店</h1>
+						<h1 class="t2">服务亿万车主</h1>
+						<div class="t3">
+							<p>好修修门店系统</p>
+							<div class="modal-button">立即下载</div>
+						</div>
 					</div>
 				</div>
 
@@ -32,11 +35,12 @@
 		</swiper>
 		<img src="/img/home/banner-shade.png" class="shade" />
 	</div>
+	</div>
 	<div class="blocks block0">
 		<div class="center">
 			<h2>让车主都能享受美好的汽车生活</h2>
 			<div class="body">
-				<img class="main-pic" src="/img/home/big-data.png"/>
+				<img class="main-pic on" src="/img/home/big-data.png"/>
 				<div class="tab tab1 on">
 					<img src="/img/home/tab1.png"/>
 					<h3>智能服务</h3>
@@ -67,7 +71,7 @@
 		<div class="center">
 			<h2>门店赋能</h2>
 			<div class="body">
-				<div class="main-pic">
+				<div class="main-pic on">
 					<img src="/img/home/energize.png"/>
 					<div class="app-er-tag">
 						<img src="/img/home/app-ercode.png"/>
@@ -105,10 +109,11 @@
 	</div>
 	<div class="blocks block2">
 		<img class="to-next" src="/img/home/to-next.png"/>
+		<img class="driver-side" src="/img/home/driver-side.png"/>
 		<div class="center">
 			<h2>车主服务</h2>
 			<div class="body">
-				<img class="main-pic" src="/img/home/factory-bg.png"/>
+				<img class="main-pic on" src="/img/home/factory-bg.png"/>
 
 				<div class="tag tag1 on">
 					<div>
@@ -297,11 +302,12 @@ export default {
 							dom.style.cssText= ''
 							dom.classList.remove('on')
 							resolve()
-						}, 200);
+						}, 400);
 					});
 				}
 
-				async function asyncPrint(domes) {
+				async function asyncPrint(domes, dom) {
+					if(dom) await timeout(dom);
 					for(let i in domes){
 						if(parseInt(i)>=0) {
 							await timeout(domes[i]);
@@ -311,15 +317,15 @@ export default {
 
 				switch (name){
 					case 'block0':{
-						asyncPrint(document.querySelectorAll('.block0 .tab'))
+						asyncPrint(document.querySelectorAll('.block0 .tab'), document.querySelector('.block0 .main-pic'))
 						break
 					}
 					case 'block1':{
-						asyncPrint(document.querySelectorAll('.block1 .icon'))
+						asyncPrint(document.querySelectorAll('.block1 .icon'),document.querySelector('.block1 .main-pic'))
 						break
 					}
 					case 'block2':{
-						asyncPrint(document.querySelectorAll('.block2 .tag'))
+						asyncPrint(document.querySelectorAll('.block2 .tag'),document.querySelector('.block2 .main-pic'))
 						break
 					}
 				}
@@ -333,10 +339,17 @@ export default {
 
 <style scoped lang="less">
 .home{
+	*{
+		transition: opacity .7s;
+	}
 	margin-top: 60px;
 	.banner{
 		position: relative;
 		overflow: hidden;
+
+		/*display: inline-block;*/
+		/*text-align: left;*/
+		/*width: 1200px;*/
 		.dummy{
 			margin-top: 30%;
 		}
@@ -350,42 +363,50 @@ export default {
 				width: 100%;
 				height: 100%;
 				position: relative;
-				h1{
-					color: white;
-					font-size: 36px;
-					font-weight: 400;
-					text-shadow:3px 3px 6px rgba(0,0,0,0.68);
+				.text{
+					width: 1200px;
+					height: 100%;
 					position: absolute;
-				}
-				.t1{
-					top: 20%;
-					left: 10%;
-				}
-				.t2{
-					top: 40%;
-					left: 25%;
-				}
-				.t3{
-					position: absolute;
-					top: 30%;
-					right: 20%;
-					p{
-						font-size: 18px;
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+					h1{
 						color: white;
+						font-size: 54px;
+						font-weight: 400;
+						text-shadow:3px 3px 6px rgba(0,0,0,0.68);
+						position: absolute;
 					}
-					.modal-button{
-						margin-top: 20px;
-						display: inline-block;
-						padding: 0 30px;
-						font-size: 14px;
-						height: 30px;
-						line-height: 30px;
-						color: white;
-						text-align: center;
-						background:linear-gradient(90deg,rgba(249,172,59,1) 0%,rgba(255,102,15,1) 100%);
-						box-shadow:0px 4px 9px 3px rgba(112,60,2,0.61);
-						border-radius:24px;
-						cursor: pointer;
+					.t1{
+						top: 20%;
+						left: 30px;
+					}
+					.t2{
+						top: 45%;
+						left: 320px;
+					}
+					.t3{
+						position: absolute;
+						top: 30%;
+						right: 10%;
+						p{
+							font-size: 20px;
+							color: white;
+						}
+						.modal-button{
+							margin-top: 20px;
+							display: inline-block;
+							padding: 0 40px;
+							font-size: 18px;
+							height: 40px;
+							line-height: 40px;
+							color: white;
+							text-align: center;
+							background:linear-gradient(90deg,rgba(249,172,59,1) 0%,rgba(255,102,15,1) 100%);
+							box-shadow:0px 4px 9px 3px rgba(112,60,2,0.61);
+							border-radius:24px;
+							cursor: pointer;
+						}
 					}
 				}
 			}
@@ -412,7 +433,7 @@ export default {
 			margin: 50px 0;
 			h2{
 				margin-top: 20px;
-				font-size: 30px;
+				font-size: 36px;
 				text-align: center;
 				font-weight: 400;
 			}
@@ -434,6 +455,9 @@ export default {
 			.main-pic{
 				width: 50%;
 			}
+			.main-pic.on{
+				opacity: 0;
+			}
 			.tab{
 				position: absolute;
 				overflow: hidden;
@@ -441,14 +465,14 @@ export default {
 				text-align: left;
 				h3{
 					margin: 15px 0;
-					font-size: 18px;
+					font-size: 22px;
 					font-weight: 600;
 					padding-left: 110px;
 				}
 				p{
 					padding-left: 110px;
 					color: #6B798E;
-					font-size: 12px;
+					font-size: 16px;
 					word-wrap: break-word;
 					word-break: break-all;
 				}
@@ -486,7 +510,7 @@ export default {
 		.body{
 			margin: 100px 0 ;
 			position: relative;
-			overflow: hidden;
+			min-height: 760px;
 			.main-pic{
 				width: 70%;
 				position: absolute;
@@ -512,6 +536,9 @@ export default {
 					}
 				}
 			}
+			.main-pic.on{
+				opacity: 0;
+			}
 			.icon{
 				position: relative;
 				margin-bottom: 6%;
@@ -523,13 +550,13 @@ export default {
 				h3{
 					margin-bottom: 15px;
 					padding-left: 10px;
-					font-size: 18px;
+					font-size: 22px;
 					font-weight: 600;
 					float: left;
 				}
 				p{
 					color: #4A4A4A;
-					font-size: 14px;
+					font-size: 16px;
 					white-space: nowrap;
 					position: absolute;
 					left: 90px;
@@ -544,18 +571,42 @@ export default {
 		}
 	}
 	.block2{
-		background: url('/img/home/driver-bg.png') no-repeat;
-		background-size: 100% auto;
-		.center h2{
-			color: white;
+		background: white url('/img/home/driver-bg.png') no-repeat center center;
+		/*background-size: 100% 100%;*/
+		background-size: cover;
+		position: relative;
+		/*min-height: 1100px;*/
+		/*overflow: hidden;*/
+		/*.dummy{*/
+			/*margin-top: 65%;*/
+		/*}*/
+		.driver-side{
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+		.center {
+			/*position: absolute;*/
+			/*top: 0;*/
+			/*left: 50%;*/
+			/*transform: translate(-50%, 0);*/
+			/*margin: 0;*/
+			h2{
+				color: white;
+			}
 		}
 		.body{
 			margin-top: 100px;
+			/*margin-bottom: 50px;*/
 			padding-top: 50px;
 			position: relative;
 			overflow: visible;
 			.main-pic{
 				width: 100%;
+			}
+			.main-pic.on{
+				opacity: 0;
 			}
 			.tag{
 				text-align: center;
@@ -566,7 +617,7 @@ export default {
 					padding-left: 15px;
 					position: relative;
 					text-align: left;
-					font-size: 12px;
+					font-size: 14px;
 					color: white;
 					&:after{
 						content: '';
@@ -575,46 +626,46 @@ export default {
 						border:2px solid #0DE791;
 						border-radius: 100%;
 						position: absolute;
-						top: 4px;
+						top: 7px;
 						left: 0;
 					}
 				}
 				h3{
 					/*display: inline-block;*/
 					margin-top: 10px;
-					font-size: 14px;
-					font-weight: 400;
+					font-size: 18px;
+					font-weight: 600;
 					color: white;
-					height: 30px;
-					line-height: 30px;
-					padding: 0 20px;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 30px;
 					background:#FAA536;
 					box-shadow:0 2px 3px 0 #483002;
 					border-radius:20px;
 				}
 			}
 			.tag1{
-				top: 11%;
+				top: 10%;
 				left: 10.55%;
 			}
 			.tag2{
-				top: 3%;
+				top: 2%;
 				left: 23.55%;
 			}
 			.tag3{
-				top: -5%;
+				top: -7%;
 				left: 38%;
 			}
 			.tag4{
-				top: 3%;
+				top: 2%;
 				left: 51%;
 			}
 			.tag5{
-				top: -5%;
+				top: -7%;
 				left: 64.55%;
 			}
 			.tag6{
-				top: 3%;
+				top: 2%;
 				left: 83%;
 			}
 			.tag.on{
@@ -629,7 +680,7 @@ export default {
 			.body{
 				margin: 30px 0;
 				p{
-					font-size: 16px;
+					font-size: 18px;
 					line-height: 36px;
 					span{
 						color: #2D4996;
@@ -664,7 +715,7 @@ export default {
 				transform: translate(-50%, -50%);
 				text-align: center;
 				p{
-					font-size: 14px;
+					font-size: 18px;
 					color: white;
 					white-space: nowrap;
 				}
