@@ -461,7 +461,7 @@ export default {
 			.tab{
 				position: absolute;
 				overflow: hidden;
-				width: 320px;
+				width: 330px;
 				text-align: left;
 				h3{
 					margin: 15px 0;
@@ -489,7 +489,7 @@ export default {
 			}
 			.tab2{
 				top: 3%;
-				right: 5%;
+				right: 3%;
 			}
 			.tab3{
 				bottom:1%;
@@ -497,7 +497,7 @@ export default {
 			}
 			.tab4{
 				bottom:1%;
-				right: 1%;
+				right: 0%;
 			}
 			.tab.on{
 				transform: translate(0, -50px);
@@ -533,6 +533,7 @@ export default {
 					p{
 						font-size: 12px;
 						color: #4A4A4A;
+						white-space: nowrap;
 					}
 				}
 			}
@@ -764,12 +765,12 @@ export default {
 			overflow: hidden;
 			padding: 30px 30px 50px;
 			white-space: nowrap;
-			width: 430px;
+			width: 500px;
 		}
 		.left{
-			width: 160px;
+			width: 200px;
 			display: inline-block;
-			margin-right: 30px;
+			margin-right: 40px;
 			vertical-align: middle;
 			p{
 				font-size: 12px;

@@ -130,8 +130,9 @@ export default {
 		.right{
 			float: right;
 			li{
+				color: #333333;
 				display: inline-block;
-				font-size: 14px;
+				font-size: 16px;
 				line-height: 58px;
 				padding: 0 4px;
 				margin: 0 10px;
