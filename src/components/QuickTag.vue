@@ -5,13 +5,18 @@
 		<p class="triangle"></p>
 		<div><i></i></div>
 	</li>
-	<li><i class="fa fa-phone"></i>
+	<li style="cursor: default"><i class="fa fa-phone"></i>
 		<div class="hot-line">
 			<span>客服热线</span>
 			<p>400-663-8210</p>
 		</div>
 	</li>
-	<li @click="toQQ"><i class="fa fa-qq" style="font-size: 20px"></i></li>
+	<li @click="toQQ"><i class="fa fa-qq" style="font-size: 20px"></i>
+		<div class="hot-line">
+			<span>官方QQ</span>
+			<p>3181682369</p>
+		</div>
+	</li>
 	<li @click="toConsult"><i class="fa fa-commenting-o nostroke" style="font-size: 23px"></i></li>
 </ul>
 </template>
@@ -28,7 +33,8 @@ export default {
 			}
 		},
 		toQQ(){
-			window.open('tencent://message/?Site=3181682369')
+			// window.open('tencent://message/?Site=3181682369')
+			window.location.href= 'tencent://message/?Site=3181682369'
 		},
 		toConsult(){
 			window.open('/#/consult', '_blank')

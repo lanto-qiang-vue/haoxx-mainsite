@@ -677,6 +677,9 @@ export default {
 	.block3{
 		.center{
 			margin-top: 0;
+			h2{
+				margin-top: 70px;
+			}
 			.body{
 				margin: 30px 0;
 				p{
@@ -723,7 +726,7 @@ export default {
 				h3{
 					display: inline-block;
 					margin-top: 30px;
-					font-size: 16px;
+					font-size: 18px;
 					font-weight: 400;
 					color: white;
 					height: 40px;

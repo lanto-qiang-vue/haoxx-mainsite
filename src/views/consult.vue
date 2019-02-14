@@ -123,13 +123,13 @@ export default {
 		position: relative;
 		.center{
 			width: 100%;
-			max-width: 1000px;
+			max-width: 750px;
 			display: inline-block;
 			position: relative;
 			background:white;
 			box-shadow:0px 2px 3px 0px rgba(0,0,0,0.13);
 			border-radius:5px;
-			padding: 30px 16% 50px;
+			padding: 30px 30px 50px;
 			overflow: hidden;
 			.middle{
 				text-align: left;
@@ -149,8 +149,6 @@ export default {
 					margin-top: 30px;
 				}
 			}
-
-
 		}
 		.success{
 			position: absolute;
