@@ -34,7 +34,8 @@ export default {
 		},
 		toQQ(){
 			// window.open('tencent://message/?Site=3181682369')
-			window.location.href= 'tencent://message/?Site=3181682369'
+			// window.location.href= 'tencent://message/?Site=3181682369'
+			window.open('http://wpa.qq.com/msgrd?v=3&amp;uin=3181682369&amp;site=qq&amp;menu=yes')
 		},
 		toConsult(){
 			window.open('/#/consult', '_blank')

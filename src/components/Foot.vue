@@ -11,7 +11,8 @@
 			</li>
 			<li class="long">
 				<p>公司地址：上海市长宁区淞虹路207号明基商务广场C栋4楼B座</p>
-				<p>官方QQ：<a href="tencent://message/?Site=3181682369">3181682369</a></p>
+				<!--<p>官方QQ：<a href="tencent://message/?Site=3181682369">3181682369</a></p>-->
+				<p>官方QQ：<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=3181682369&amp;site=qq&amp;menu=yes" target="_blank">3181682369</a></p>
 				<p>官方微博：<a href="https://weibo.com/hoxiuxiu" target="_blank"><i class="fa fa-weibo"></i></a></p>
 			</li>
 			<li>
