@@ -28,31 +28,31 @@
         </div>
         <div class="serve-menu">
             <div class="menu-left">
-                <img src="/img/content/icon-capacity.png" alt="">
+                <img src="/img/content/icon-Sa.png" alt="">
             </div>
             <div class="menu-right menu-right-border">
-                <h1>智能服务</h1>
-                <p>智能识别汽车的显性和隐性需求，主动、高效、安全、绿色地为您的汽车生活服务。</p>
+                <h1>SaaS门店</h1>
+                <p>针对维修门店的痛点，提供涵盖PC端和移动端的、使用便捷的智能化SaaS经营管理工具。</p>
             </div>
             
         </div>
         <div class="serve-menu">
             <div class="menu-left">
-                <img src="/img/content/icon-capacity.png" alt="">
+                <img src="/img/content/icon-assess.png" alt="">
             </div>
             <div class="menu-right menu-right-border">
-                <h1>智能服务</h1>
-                <p>智能识别汽车的显性和隐性需求，主动、高效、安全、绿色地为您的汽车生活服务。</p>
+                <h1>车辆价值评估</h1>
+                <p>通过大数据和云计算，提供汽车使用过程的稳定性分析与价值评估。</p>
             </div>
             
         </div>
         <div class="serve-menu">
             <div class="menu-left">
-                <img src="/img/content/icon-capacity.png" alt="">
+                <img src="/img/content/icon-supply.png" alt="">
             </div>
             <div class="menu-right">
-                <h1>智能服务</h1>
-                <p>智能识别汽车的显性和隐性需求，主动、高效、安全、绿色地为您的汽车生活服务。</p>
+                <h1>高效供应链</h1>
+                <p>整合供应链，通过配件商城，实现渠道扁平化和动态进销存，为门店提供低成本、高效的智能化服务。</p>
             </div>
             
         </div>
@@ -77,10 +77,10 @@
             <div class="stores-right">
                 <div class="stores-left-menu">
                     <div class="menu-img">
-                        <img src="/img/content/keyed-car.png" alt="">
+                        <img src="/img/content/service copy.png" alt="">
                     </div>
-                    <h1>一键接车</h1>
-                    <p>手机App扫车牌／智能识别／自动开单</p>
+                    <h1>智能维修</h1>
+                    <p>全系车型保养规则／整车结构图/在线商城精准选购配件</p>
 
                 </div>
                 
@@ -88,10 +88,10 @@
             <div class="stores-left">
                 <div class="stores-left-menu">
                     <div class="menu-img">
-                        <img src="/img/content/keyed-car.png" alt="">
+                        <img src="/img/content/insurance copy.png" alt="">
                     </div>
-                    <h1>一键接车</h1>
-                    <p>手机App扫车牌／智能识别／自动开单</p>
+                    <h1>车险服务</h1>
+                    <p>手机APP智能报价／保险到期提醒</p>
 
                 </div>
                 
@@ -99,10 +99,10 @@
             <div class="stores-right">
                 <div class="stores-left-menu">
                     <div class="menu-img">
-                        <img src="/img/content/keyed-car.png" alt="">
+                        <img src="/img/content/store copy.png" alt="">
                     </div>
-                    <h1>一键接车</h1>
-                    <p>手机App扫车牌／智能识别／自动开单</p>
+                    <h1>进销存</h1>
+                    <p>动态库存管理／智能下单补货</p>
 
                 </div>
                 
@@ -110,21 +110,20 @@
             <div class="stores-left">
                 <div class="stores-left-menu">
                     <div class="menu-img">
-                        <img src="/img/content/keyed-car.png" alt="">
+                        <img src="/img/content/relation copy.png" alt="">
                     </div>
-                    <h1>一键接车</h1>
-                    <p>手机App扫车牌／智能识别／自动开单</p>
+                    <h1>客户关系</h1>
+                    <p>智能画像／精准服务</p>
 
                 </div>
                 
             </div>
             <div class="stores-right">
                 <div class="stores-left-menu">
-                    <div class="menu-img">
-                        <img src="/img/content/keyed-car.png" alt="">
+                    <div class="menu-img1">
+                        <img src="/img/content/hoxiuxiu-app.png" alt="">
                     </div>
-                    <h1>一键接车</h1>
-                    <p>手机App扫车牌／智能识别／自动开单</p>
+                    <p>扫我下载好修修门店App</p>
 
                 </div>
                 
@@ -344,7 +343,7 @@ export default {
                         padding: 6px 0;
                         width:56px;
                         height:32px;
-                        font-size:14px;
+                        font-size:13px;
                         font-weight:500;
                         color:rgba(51,51,51,1);
                         line-height:20px;
@@ -354,7 +353,7 @@ export default {
                     p{
                         width:120px;
                         height:34px;
-                        font-size:12px;
+                        font-size:11px;
                         font-weight:400;
                         color:rgba(102,102,102,1);
                         line-height:17px;
@@ -405,11 +404,21 @@ export default {
                             height: 100%;
                         }
                     }
+                    .menu-img1{
+                        margin: 0 auto;
+                        width: 90px;
+                        height:90px;
+                        margin-top: 20px;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
                     h1{
                         padding: 6px 0;
                         width:56px;
                         height:32px;
-                        font-size:14px;
+                        font-size:13px;
                         font-weight:500;
                         color:rgba(51,51,51,1);
                         line-height:20px;
@@ -419,7 +428,7 @@ export default {
                     p{
                         width:120px;
                         height:34px;
-                        font-size:12px;
+                        font-size:11px;
                         font-weight:400;
                         color:rgba(102,102,102,1);
                         line-height:17px;
