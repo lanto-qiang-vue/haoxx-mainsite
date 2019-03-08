@@ -9,8 +9,7 @@
         <img src="/img/phone/keyed-carcopy.png" class="width-100"/>
         </div>
                 <div  class="width-100 line-56 center font-35e margin-top20">
-                                   <!--<b>一键接车</b>-->
-                    一键接车
+                                   <b>一键接车</b>
                 </div>
                 <div class="width-100 line-56 center font-3e margin-top20" style="rgba(102,102,102,1)">
                         手机APP扫车牌/智能识别/自动开单
@@ -65,31 +64,33 @@
                 </div>
             </div>
             <!---->
-            <div class="main-body auto" style="width:30%;background:rgba(255,255,255,1);padding:20px;border:2px solid rgba(0,0,0,0.08);margin-bottom:60px;">
+            <div class="main-body auto" style="width:38%;background:rgba(255,255,255,1);padding:5px;border:2px solid rgba(0,0,0,0.08);margin-bottom:40px;">
                 <div class="width-100 auto" style="border:1px dashed black;">
                     <img src="/img/phone/hoxiuxiu.png" class="width-100"/>
                 </div>
-                <div  class="width-100 auto line-56 center font-35e">
+                <div  class="width-100 auto line-56 center font-3e">
                    扫我下载好修修门店APP
                 </div>
             </div>
         </div>
         <!--咨询-->
-        <div style="width:100%;height:auto;background:pink;padding-bottom:60px;">
-            <div class="width-100 center" style="font-size:4em;padding-top:60px;"><b>在线业务咨询</b></div>
-            <div class="center auto" style="font-size:3.3em;padding-top:30px;width:80%;">
-                如果你想了解更多业务内容或洽谈合作请立即联系我们我们将以最快速度回复你
-            </div>
-            <button style="width:90%;background:#438EFF;margin:0 auto;display:block;margin-top:30px;line-height:2.5em;font-size:4em;color:white;">
-             立即咨询
-            </button>
-        </div>
+        <consult></consult>
+        <!--<div style="width:100%;height:auto;background:pink;padding-bottom:30px;">-->
+            <!--<div class="width-100 center" style="font-size:18px;padding-top:30px;"><b>在线业务咨询</b></div>-->
+            <!--<div class="center auto" style="font-size:13px;padding-top:20px;width:80%;">-->
+                <!--如果你想了解更多业务内容或洽谈合作请立即联系我们我们将以最快速度回复你-->
+            <!--</div>-->
+            <!--<button style="width:90%;background:#438EFF;margin:0 auto;display:block;margin-top:25px;line-height:40px;font-size:14px;color:white;">-->
+             <!--立即咨询-->
+            <!--</button>-->
+        <!--</div>-->
     </div>
 </template>
-
 <script>
+    import consult from '@/components/consult.vue'
     export default {
-        name: "storeFunction"
+        name: "storeFunction",
+        components:{consult}
     }
 </script>
 
@@ -104,17 +105,16 @@
         width:30%;
     }
     .margin-top20{
-     margin-top:20px;
+     margin-top:10px;
     }
     .font-35e{
-        /*font-size:3.5em;*/
         font-size:14px;
     }
     .font-3e{
-        font-size:3em;
+        font-size:12px;
     }
     .line-56{
-        line-height:56px;
+        line-height:20px;
     }
     .center{
         text-align:center;
@@ -129,7 +129,7 @@
         border:2px solid rgba(0,0,0,0.06);
     }
     .main .main-body{
-        width:100%;height: auto;margin-top:60px;
+        width:100%;height: auto;margin-top:30px;
 
     }
     .head-img{

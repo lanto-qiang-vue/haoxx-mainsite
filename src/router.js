@@ -10,6 +10,11 @@ let route= new Router({
       name: 'home',
 	    component: () => import('@/views/Home.vue')
     },
+      {
+          path:'/phone',
+          name:'phone',
+          component: () => import('@/phone/storeFunction.vue')
+      },
 	  {
       path: '/consult',
       name: 'consult',
