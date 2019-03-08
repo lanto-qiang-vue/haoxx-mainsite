@@ -15,6 +15,11 @@ let route= new Router({
       name: 'consult',
 	    component: () => import('@/views/consult.vue')
     },
+    {
+      path: '/hxx-content',
+      name: 'hxx-content',
+	    component: () => import('@/views/hxx-content.vue')
+    },
 
   ]
 })
