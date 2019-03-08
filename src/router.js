@@ -5,11 +5,6 @@ Vue.use(Router)
 
 let route= new Router({
   routes: [
-      {
-          path: '/phone',
-          name: 'phone',
-          component: () => import('@/phone/storeFunction.vue')
-      },
     {
       path: '/',
       name: 'home',
@@ -20,6 +15,12 @@ let route= new Router({
       name: 'consult',
 	    component: () => import('@/views/consult.vue')
     },
+    {
+      path: '/hxx-content',
+      name: 'hxx-content',
+	    component: () => import('@/views/hxx-content.vue')
+    },
+
   ]
 })
 route.afterEach((to, from) => {
