@@ -173,7 +173,7 @@ export default {
             top: 50%;
             transform: translate(-50%, -50%);
             h1{
-                width:138px;
+                width:148px;
                 height:32px;
                 font-size:23px;
                 font-weight:400;
@@ -193,9 +193,9 @@ export default {
             .t3{
                 position: absolute;
                 top: 35%;
-                right: 23px;;
+                right: 23px;
                 p{
-                    width:84px;
+                    width:86px;
                     height:17px;
                     font-size:12px;
                     font-weight:400;
