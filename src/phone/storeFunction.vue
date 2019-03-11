@@ -1,5 +1,6 @@
 <template>
     <div class="body">
+        <headers></headers>
     <div class="head-img">
     <img src="/img/phone/head-img.png">
     </div>
@@ -75,22 +76,17 @@
         </div>
         <!--咨询-->
         <consult></consult>
-        <!--<div style="width:100%;height:auto;background:pink;padding-bottom:30px;">-->
-            <!--<div class="width-100 center" style="font-size:18px;padding-top:30px;"><b>在线业务咨询</b></div>-->
-            <!--<div class="center auto" style="font-size:13px;padding-top:20px;width:80%;">-->
-                <!--如果你想了解更多业务内容或洽谈合作请立即联系我们我们将以最快速度回复你-->
-            <!--</div>-->
-            <!--<button style="width:90%;background:#438EFF;margin:0 auto;display:block;margin-top:25px;line-height:40px;font-size:14px;color:white;">-->
-             <!--立即咨询-->
-            <!--</button>-->
-        <!--</div>-->
+         <!--版权-->
+      <footers></footers>
     </div>
 </template>
 <script>
-    import consult from '@/components/consult.vue'
+    import headers  from '@/components/headers.vue';
+    import consult from '@/components/consult.vue';
+    import footers  from '@/components/footers.vue';
     export default {
         name: "storeFunction",
-        components:{consult}
+        components:{consult,footers,headers}
     }
 </script>
 

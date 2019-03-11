@@ -26,7 +26,7 @@
     .consult .content{
         text-align: center;
         margin: 0 auto;
-        font-size:13px;padding-top:20px;width:80%;
+        font-size:13px;padding-top:20px;width:85%;
     }
     .consult .button{
         width:90%;background:#438EFF;margin:0 auto;display:block;margin-top:25px;line-height:40px;font-size:14px;color:white;
