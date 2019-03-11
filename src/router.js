@@ -15,11 +15,6 @@ let route= new Router({
           name:'phone',
           component: () => import('@/phone/storeFunction.vue')
       },
-      {
-          path:'/headers',
-          name:'headers',
-          component: () => import('@/components/headers.vue')
-      },
 	  {
       path: '/consult',
       name: 'consult',
