@@ -11,8 +11,8 @@ let route= new Router({
 	    component: () => import('@/views/Home.vue')
     },
       {
-          path:'/phone',
-          name:'phone',
+          path:'/storeFunction',
+          name:'storeFunction',
           component: () => import('@/phone/storeFunction.vue')
       },
 	  {
