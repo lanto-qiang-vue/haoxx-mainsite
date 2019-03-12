@@ -66,7 +66,7 @@
             </div>
             <!---->
             <div class="main-body auto" style="width:38%;background:rgba(255,255,255,1);padding:5px;border:2px solid rgba(0,0,0,0.08);margin-bottom:40px;">
-                <div class="width-100 auto" style="border:1px dashed black;">
+                <div class="width-100 auto" style="border:1px  black;">
                     <img src="/img/phone/hoxiuxiu.png" class="width-100"/>
                 </div>
                 <div  class="width-100 auto line-56 center font-3e">

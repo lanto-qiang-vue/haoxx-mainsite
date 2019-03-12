@@ -15,6 +15,11 @@ let route= new Router({
           name:'storeFunction',
           component: () => import('@/phone/storeFunction.vue')
       },
+      {
+          path:'/ownerService',
+          name:'ownerService',
+          component: () => import('@/phone/ownerService.vue')
+      },
 	  {
       path: '/consult',
       name: 'consult',

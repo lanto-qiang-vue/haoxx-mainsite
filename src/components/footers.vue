@@ -39,7 +39,7 @@
     .footer .copyright{
         color:rgba(204,204,204,1);
         width:90%;
-        font-size:0.8em;
+        font-size:12px;
         padding-top:10px;
         margin:0 auto;
         text-align:center;
