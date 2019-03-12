@@ -28,7 +28,7 @@ let route= new Router({
     {
       path: '/hxx-content',
       name: 'hxx-content',
-	    component: () => import('@/views/hxx-content.vue')
+	    component: () => import('@/phone/hxx-content.vue')
     },
 
   ]
