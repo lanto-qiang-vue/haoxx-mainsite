@@ -12,7 +12,7 @@
                 <div  class="width-100 line-56 center font-35e margin-top20">
                                    <b>一键接车</b>
                 </div>
-                <div class="width-100 line-56 center font-3e margin-top20" style="rgba(102,102,102,1)">
+                <div class="width-100 line-56 center font-3e margin-top20 description">
                         手机APP扫车牌/智能识别/自动开单
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div  class="width-100 line-56 center font-35e margin-top20">
                     <b>智能维修</b>
                 </div>
-                <div class="width-100 line-56 center font-3e margin-top20" style="rgba(102,102,102,1)">
+                <div class="width-100 line-56 center font-3e margin-top20 description">
                     全系车型保养规则/整车结构图/在线商城精准选购配件
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <div  class="width-100 line-56 center font-35e margin-top20">
                     <b>车险服务</b>
                 </div>
-                <div class="width-100 line-56 center font-3e margin-top20" style="rgba(102,102,102,1)">
+                <div class="width-100 line-56 center font-3e margin-top20 description">
                     手机APP只能报价/保险到期提醒
                 </div>
             </div>
@@ -48,7 +48,7 @@
                 <div  class="width-100 line-56 center font-35e margin-top20">
                     <b>进销存</b>
                 </div>
-                <div class="width-100 line-56 center font-3e margin-top20" style="rgba(102,102,102,1)">
+                <div class="width-100 line-56 center font-3e margin-top20 description">
                     动态库存管理/智能下单补货
                 </div>
             </div>
@@ -60,7 +60,7 @@
                 <div  class="width-100 line-56 center font-35e margin-top20">
                     <b>客户关系</b>
                 </div>
-                <div class="width-100 line-56 center font-3e margin-top20" style="rgba(102,102,102,1)">
+                <div class="width-100 line-56 center font-3e margin-top20 description">
                     智能画像/精准服务
                 </div>
             </div>
@@ -119,14 +119,17 @@
         width:100%;
     }
     .main{
-        width:calc(100% - 40px);
-        margin: 20px 20px 20px 20px;
+        margin:20px;
         background:rgba(255,255,255,1);
         border:2px solid rgba(0,0,0,0.06);
     }
     .main .main-body{
         width:100%;height: auto;margin-top:30px;
 
+    }
+    .description{
+        padding:0 10px;
+        color:rgba(102,102,102,1);
     }
     .head-img{
         width:100%;
