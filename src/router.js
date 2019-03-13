@@ -11,14 +11,22 @@ let route= new Router({
 	    component: () => import('@/views/Home.vue')
     },
       {
+          //门店赋能
           path:'/storeFunction',
           name:'storeFunction',
           component: () => import('@/phone/storeFunction.vue')
       },
       {
+          //车主服务
           path:'/ownerService',
           name:'ownerService',
           component: () => import('@/phone/ownerService.vue')
+      },
+      {
+          //关于我们
+          path:'/aboutMe',
+          name:'aboutMe',
+          component: () => import('@/phone/aboutMe.vue')
       },
 	  {
       path: '/consult',
