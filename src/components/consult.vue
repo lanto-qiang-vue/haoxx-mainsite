@@ -17,18 +17,37 @@
 </script>
 
 <style scoped>
-.consult{
-    width:100%;height:auto;background:pink;padding-bottom:30px;
-}
-    .consult .title{
-        width:100%;text-align: center;font-size:18px;padding-top:30px;
+    .consult {
+        width: 100%;
+        height: auto;
+        background: url("/img/phone//consultBackground.png");
+        background-size:110%;
+        padding-bottom: 30px;
     }
-    .consult .content{
+
+    .consult .title {
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+        padding-top: 30px;
+    }
+
+    .consult .content {
         text-align: center;
         margin: 0 auto;
-        font-size:13px;padding-top:20px;width:85%;
+        font-size: 13px;
+        padding-top: 20px;
+        width: 85%;
     }
-    .consult .button{
-        width:90%;background:#438EFF;margin:0 auto;display:block;margin-top:25px;line-height:40px;font-size:14px;color:white;
+
+    .consult .button {
+        width: 90%;
+        background: #438EFF;
+        margin: 0 auto;
+        display: block;
+        margin-top: 25px;
+        line-height: 40px;
+        font-size: 14px;
+        color: white;
     }
 </style>
