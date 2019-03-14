@@ -28,6 +28,12 @@ let route= new Router({
           name:'aboutMe',
           component: () => import('@/phone/aboutMe.vue')
       },
+      {
+          //联系我们
+          path:'/contactUs',
+          name:'contactUs',
+          component: () => import('@/phone/contactUs.vue')
+      },
 	  {
       path: '/consult',
       name: 'consult',
