@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-        <headers></headers>
+        <headers>
     <div class="head-img">
     <img src="/img/phone/head-img.png">
     </div>
@@ -78,6 +78,7 @@
         <consult></consult>
          <!--版权-->
       <footers></footers>
+        </headers>
     </div>
 </template>
 <script>

@@ -1,6 +1,6 @@
 <template>
     <div class="contact">
-        <headers></headers>
+        <headers>
         <div>
             <img src="/img/phone/contact-head.png" width="100%"/>
         </div>
@@ -44,6 +44,7 @@
             <div>关注好修修微信公众号</div>
         </div>
         <footers></footers>
+        </headers>
     </div>
 </template>
 <script>

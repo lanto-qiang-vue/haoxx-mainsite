@@ -34,6 +34,12 @@ let route= new Router({
           name:'contactUs',
           component: () => import('@/phone/contactUs.vue')
       },
+      {
+          //在线咨询
+          path:'/businessConsult',
+          name:'businessConsult',
+          component: () => import('@/phone/businessConsult.vue')
+      },
 	  {
       path: '/consult',
       name: 'consult',

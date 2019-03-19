@@ -1,6 +1,6 @@
 <template>
 <div class="layout">
-
+<headers>
     <div class="banner-block">
         <img src="/img/phone/banner-1.png" style="width: 100%;height: 100%"/>
         <div class="text">
@@ -274,16 +274,21 @@
 
         </div>
     </div>
-
+    <consult></consult>
+    <footers></footers>
+</headers>
 </div>
 </template>
 
 <script>
 import 'swiper/dist/css/swiper.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import headers  from '@/components/headers.vue';
+import consult from '@/components/consult.vue';
+import footers  from '@/components/footers.vue';
 export default {
 	name: "hxx-content",
-	components: {swiper, swiperSlide},
+	components: {swiper, swiperSlide,headers,consult,footers},
 	data(){
 		
 		return{

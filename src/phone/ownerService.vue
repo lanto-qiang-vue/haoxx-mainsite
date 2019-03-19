@@ -1,6 +1,6 @@
 <template>
     <div class="owner-body">
-        <headers></headers>
+        <headers>
         <div>
             <img src="/img/phone/owner-head.png" width="100%"/>
         </div>
@@ -88,6 +88,7 @@
         <div style="clear: both;"></div>
         <consult></consult>
         <footers></footers>
+        </headers>
     </div>
 </template>
 
@@ -98,7 +99,10 @@
 
     export default {
         name: "ownerService",
-        components: {consult, footers, headers}
+        components: {consult, footers, headers},
+        methods:{
+
+        }
     }
 </script>
 

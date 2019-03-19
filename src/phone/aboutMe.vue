@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <headers></headers>
+        <headers>
         <div>
             <img src="/img/phone/about-head.png" width="100%"/>
         </div>
@@ -39,6 +39,7 @@
         </div>
         <consult></consult>
         <footers></footers>
+        </headers>
     </div>
 </template>
 <script>
