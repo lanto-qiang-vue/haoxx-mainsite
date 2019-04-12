@@ -8,24 +8,31 @@
 			<!-- slides -->
 			<swiper-slide>
 				<div class="banner-block">
-					<img src="/img/home/banner-1.png" style="width: 100%;height: 100%"/>
-					<div class="text">
-						<h1 class="t1">赋能万千门店</h1>
-						<h1 class="t2">服务亿万车主</h1>
-						<div class="t3">
-							<p>好修修门店系统</p>
-							<div class="modal-button">立即下载</div>
-						</div>
-					</div>
+					<a href="https://mp.weixin.qq.com/s/1McKiLoFtBq9v66rMbjzcA" target="_blank">
+					<img src="/img/home/banner-2.png" style="width: 100%;height: 100%"/>
+					</a>
 				</div>
 
 			</swiper-slide>
 			<swiper-slide>
 				<div class="banner-block">
-					<img src="/img/home/banner-2.png" style="width: 100%;height: 100%"/>
+					<img src="/img/home/banner-1.png" style="width: 100%;height: 100%"/>
+					<div class="text">
+						<h1 class="t1">赋能万千门店</h1>
+						<h1 class="t2">服务亿万车主</h1>
+						<div class="t3" style="right: 22%">
+							<p>好修修门店系统</p>
+							<div class="modal-button store">立即下载</div>
+						</div>
+						<div class="t3">
+							<p>好修修-运营版</p>
+							<div class="modal-button operate">立即下载</div>
+						</div>
+					</div>
 				</div>
 
 			</swiper-slide>
+
 
 			<!-- Optional controls -->
 			<div class="swiper-pagination"  slot="pagination"></div>
@@ -183,7 +190,7 @@
 		<hxx-foot @toRoll="toRoll"></hxx-foot>
 	</div>
 	<quick-tag v-show="showTip"></quick-tag>
-	<div class="modal" v-show="showModal">
+	<div class="modal" v-show="showModal=='store'">
 		<div class="mask"></div>
 		<div class="content">
 			<div class="left">
@@ -194,7 +201,19 @@
 				<p>好修修门店系统<span>（电脑端）</span></p>
 				<small>点击在线使用</small>
 			</div>
-			<i class="fa fa-times close" @click="showModal= false"></i>
+			<i class="fa fa-times close" @click="showModal= ''"></i>
+		</div>
+	</div>
+
+	<div class="modal" v-show="showModal=='operate'">
+		<div class="mask"></div>
+		<div class="content" style="text-align: center;">
+			<div class="left" style="margin: 0;">
+				<p>扫我下载好修修-运营版</p>
+				<img src="/img/home/好修修运营app下载页二维码.png"/>
+				<div style="color: #D0021B;font-size: 12px;margin-top: 15px">注：目前只支持Andirond版本下载</div>
+			</div>
+			<i class="fa fa-times close" @click="showModal= ''"></i>
 		</div>
 	</div>
 </div>
@@ -236,7 +255,7 @@ export default {
 				finish: false,
 			},
 			showTip: false,
-			showModal: false,
+			showModal: '',
 			timer: null,
 			scrollTop: 0
 		}
@@ -244,13 +263,16 @@ export default {
 	mounted(){
 		document.querySelector('.banner').addEventListener('click', (e)=>{
 			let target = e.target || e.srcElement;
-			if (!!target && target.className==='modal-button') {
-				this.showModal= true
+			if (!!target ) {
+				// console.log(target.className)
+				if(target.className.indexOf('store')>=0) this.showModal= 'store'
+				if(target.className.indexOf('operate')>=0) this.showModal= 'operate'
 			}
 		})
 
 		setTimeout(()=>{
 			this.calcHeight()
+			this.inBlock('block0')
 		},50)
 
 		window.onresize = ()=>{
@@ -293,7 +315,8 @@ export default {
 			window.open('https://hxx.hoxiuxiu.com/login', '_blank')
 		},
 		inBlock(name){
-			console.log('inBlock:', name)
+			console.log('inBlock:', '['+name+']')
+			if(!name) return
 			if(!document.querySelector('.'+name).classList.contains('on')){
 
 				function timeout(dom) {
@@ -388,7 +411,7 @@ export default {
 					.t3{
 						position: absolute;
 						top: 30%;
-						right: 10%;
+						right: 5%;
 						p{
 							font-size: 20px;
 							color: white;
@@ -773,6 +796,7 @@ export default {
 			margin-right: 40px;
 			vertical-align: middle;
 			p{
+				font-weight: 600;
 				font-size: 12px;
 				color: #4A4A4A;
 				text-align: center;
