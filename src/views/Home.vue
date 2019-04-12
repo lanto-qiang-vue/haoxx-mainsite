@@ -211,7 +211,7 @@
 			<div class="left" style="margin: 0;">
 				<p>扫我下载好修修-运营版</p>
 				<img src="/img/home/好修修运营app下载页二维码.png"/>
-				<div style="color: #D0021B;font-size: 12px;margin-top: 15px">注：目前只支持Andirond版本下载</div>
+				<div style="color: #D0021B;font-size: 12px;margin-top: 15px">注：目前只支持Android版本下载</div>
 			</div>
 			<i class="fa fa-times close" @click="showModal= ''"></i>
 		</div>
