@@ -6,14 +6,7 @@
 		<div class='dummy'></div>
 		<swiper :options="swiperOption" ref="banner" class="banner-swiper">
 			<!-- slides -->
-			<swiper-slide>
-				<div class="banner-block">
-					<a href="https://mp.weixin.qq.com/s/1McKiLoFtBq9v66rMbjzcA" target="_blank">
-					<img src="/img/home/banner-2.png" style="width: 100%;height: 100%"/>
-					</a>
-				</div>
 
-			</swiper-slide>
 			<swiper-slide>
 				<div class="banner-block">
 					<img src="/img/home/banner-1.png" style="width: 100%;height: 100%"/>
@@ -29,6 +22,13 @@
 							<div class="modal-button operate">立即下载</div>
 						</div>
 					</div>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="banner-block">
+					<a href="https://mp.weixin.qq.com/s/1McKiLoFtBq9v66rMbjzcA" target="_blank">
+						<img src="/img/home/banner-2.png" style="width: 100%;height: 100%"/>
+					</a>
 				</div>
 
 			</swiper-slide>
