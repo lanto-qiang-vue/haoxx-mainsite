@@ -36,8 +36,8 @@
 
 			<!-- Optional controls -->
 			<div class="swiper-pagination"  slot="pagination"></div>
-			<!--<div class="swiper-button-prev" slot="button-prev"></div>-->
-			<!--<div class="swiper-button-next" slot="button-next"></div>-->
+			<div class="swiper-button-prev" slot="button-prev"></div>
+			<div class="swiper-button-next" slot="button-next"></div>
 			<!--<div class="swiper-scrollbar"   slot="scrollbar"></div>-->
 		</swiper>
 		<img src="/img/home/banner-shade.png" class="shade" />
@@ -243,11 +243,11 @@ export default {
 					clickable: true
 				},
 				navigation: {
-					// nextEl: '.swiper-button-next',
-					// prevEl: '.swiper-button-prev',
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
 				},
 				autoplay: {
-					delay: 3000,
+					delay: 5000,
 					disableOnInteraction: false,
 				},
 			},
@@ -294,6 +294,13 @@ export default {
 			}
 
 		}
+
+		document.querySelector('.banner').addEventListener('mouseover', ()=>{
+			this.$refs.banner.swiper.autoplay.stop();
+		})
+		document.querySelector('.banner').addEventListener('mouseout', ()=>{
+			this.$refs.banner.swiper.autoplay.start();
+		})
 	},
 	methods:{
 		calcHeight(){
@@ -797,7 +804,7 @@ export default {
 			vertical-align: middle;
 			p{
 				font-weight: 600;
-				font-size: 12px;
+				font-size: 16px;
 				color: #4A4A4A;
 				text-align: center;
 				padding-bottom: 10px;
@@ -839,6 +846,27 @@ export default {
 </style>
 <style lang="less">
 .home{
+	.swiper-button-prev, .swiper-button-next{
+		/*background-size: 20px auto;*/
+		/*background: none;*/
+		background-color: rgba(0, 0, 0, 0.2);
+		background-image: none;
+		&:before{
+			content: '';
+			width: 20px;
+			height: 20px;
+			border-top: 2px solid rgba(255, 255, 255, 0.5);
+			border-left: 2px solid rgba(255, 255, 255, 0.5);
+			position: absolute;
+			top: 12px;
+			left: 10px;
+			transform: rotate(-45deg);
+		}
+	}
+	.swiper-button-next:before{
+		transform: rotate(135deg);
+		left: -2px;
+	}
 	.swiper-pagination-bullet{
 		width: 20px;
 		height: 2px;
