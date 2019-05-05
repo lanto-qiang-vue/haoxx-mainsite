@@ -26,6 +26,13 @@
 			</swiper-slide>
 			<swiper-slide>
 				<div class="banner-block">
+					<a href="https://mp.weixin.qq.com/s/Ro3IjwA5-40lu9jZsqxqPw" target="_blank">
+						<img src="/img/home/banner-3.png" style="width: 100%;height: 100%"/>
+					</a>
+				</div>
+			</swiper-slide>
+			<swiper-slide>
+				<div class="banner-block">
 					<a href="https://mp.weixin.qq.com/s/1McKiLoFtBq9v66rMbjzcA" target="_blank">
 						<img src="/img/home/banner-2.png" style="width: 100%;height: 100%"/>
 					</a>
