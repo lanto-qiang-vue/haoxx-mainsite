@@ -188,7 +188,7 @@
 		<div class="advisory">
 			<!--<img src="/img/home/message-bg.png"/>-->
 			<div>
-				<p>如果您想了解更多业务内容或洽谈合作请立即联系我们，我们将以最快的速度回复您!</p>
+				<!--<p>如果您想了解更多业务内容或洽谈合作请立即联系我们，我们将以最快的速度回复您!</p>-->
 				<router-link tag="h3" to="/consult">在线业务咨询</router-link>
 			</div>
 		</div>
@@ -763,7 +763,7 @@ export default {
 				}
 				h3{
 					display: inline-block;
-					margin-top: 30px;
+					/*margin-top: 30px;*/
 					font-size: 18px;
 					font-weight: 400;
 					color: white;
